@@ -1,1532 +1,2020 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en">
 
 <head>
-    <!-- Required Meta Tags -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Swiper CSS -->
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-17ZX9QEXQZ"></script>
-    <script>window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Magnific Popup CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/magnific-popup.css" />
 
-  gtag('config', 'G-17ZX9QEXQZ');</script>
-    <!-- Page Title -->
-    <title>DevOps Malayalam - DMCON 2025</title>
+    <!-- Magnific Popup JS -->
+    <script src="https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.ts-video-popup').magnificPopup({
+                type: 'iframe',
+                iframe: {
+                    patterns: {
+                        youtube: {
+                            index: 'youtube.com/',
+                            id: function (url) {
+                                var match = url.match(/[\\?&]v=([^&]+)/);
+                                return match && match[1] ? match[1] : null;
+                            },
+                            src: 'https://www.youtube.com/embed/%id%?autoplay=1'
+                        },
+                        youtu_be: {
+                            index: 'youtu.be/',
+                            id: function (url) {
+                                return url.split('youtu.be/')[1].split(/[?&]/)[0];
+                            },
+                            src: 'https://www.youtube.com/embed/%id%?autoplay=1'
+                        }
+                    }
+                }
+            });
+        });
+    </script>
 
-    <!-- Favicon Icon -->
-    <link rel="shortcut icon" href="favicon.png">
 
-    <!-- CSS Files -->
-    <link rel="stylesheet" href="assets/css/animate.css">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/font-awsome-all.min.css">
-    <link rel="stylesheet" href="assets/css/icofont.min.css">
-    <link rel="stylesheet" href="assets/css/slick.css">
-    <link rel="stylesheet" href="assets/css/meanmenu.css">
-    <link rel="stylesheet" href="assets/css/magnific-popup.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
-    <script>// Set the date we're counting down to
-        var countDownDate = new Date("September 13, 2025 09:00:00").getTime();
 
-        // Update the count down every 1 second
-        var x = setInterval(function () {
-
-            // Get today's date and time
-            var now = new Date().getTime();
-
-            // Find the distance between now and the count down date
-            var distance = countDownDate - now;
-
-            // Time calculations for days, hours, minutes and seconds
-            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            // Output the result in respective elements
-            document.getElementById("days").innerHTML = days;
-            document.getElementById("hours").innerHTML = hours;
-            document.getElementById("minutes").innerHTML = minutes;
-            document.getElementById("seconds").innerHTML = seconds;
-
-            // If the count down is over, write some text
-           if (distance < 0) {
-            clearInterval(x);
-            document.getElementById("days").innerHTML = "00";
-            document.getElementById("hours").innerHTML = "00";
-            document.getElementById("minutes").innerHTML = "00";
-            document.getElementById("seconds").innerHTML = "00";
+    <style>
+        .about-carousel {
+            display: flex;
+            animation: scroll 20s linear infinite;
         }
-        }, 1000);</script>
-<style>
-    #countdown {
-        font-family: Arial, sans-serif;
-        color: #333;
-        font-size: 2em;
-        text-align: center;
-        margin-top: 20%;
-    }
+            /* Individual image container */
+            .about-carousel img {
+                width: 30vw; /* Each image takes up 12% of the viewport width */
+                height: 20vw;
+                border-radius: 2%;
+                object-fit: cover; /* Make sure images cover the entire width */
+                flex-shrink: 0; /* Prevent images from shrinking */
+                margin-right: 1rem; /* Add space between the images */
+            }
 
-    .time-section {
-        display: inline-block;
-        margin: 0 10px;
-    }
+                .about-carousel img:last-child {
+                    margin-right: 0; /* Remove margin from the last image */
+                }
 
-    .flag {
-        position: absolute;
-        top: -30px;
-        right: -20px;
-        background-color: red;
-        color: white;
-        padding: 5px 10px;
-        font-size: 12px;
-        border-radius: 3px;
-        transform: rotate(0deg);
-        transform-origin: top right;
-    }
-</style>
+        /* Animation to scroll left and then right */
+        @keyframes scroll-back-forth {
+            0% {
+                transform: translateX(100%);
+            }
+
+            50% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        /* Apply animation with alternate direction */
+        .about-carousel {
+            display: flex;
+            animation: scroll-back-forth linear infinite;
+            animation-direction: normal; /* Auto reverse at the end */
+            transition: transform 1s ease;
+        }
+    </style>
+    <!-- Basic Page Needs ================================================== -->
+    <meta charset="utf-8">
+
+    <!-- Mobile Specific Metas ================================================== -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+
+    <!-- Site Title -->
+    <title>DMCON 2025 - </title>
+
+    <!-- CSS
+         ================================================== -->
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- Animation -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- magnific -->
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <!-- carousel -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <!-- isotop -->
+    <link rel="stylesheet" href="css/isotop.css">
+    <!-- ico fonts -->
+    <link rel="stylesheet" href="css/xsIcon.css">
+    <!-- Template styles-->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Responsive styles-->
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="icon" href="images/favicon.png" type="image/png">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+       <![endif]-->
+
+
+
+</head>
+
 <body>
-    <!-- Preloader Starts -->
-    <div class="preloader" id="preloader">
-        <div class="preloader-inner">
-            <div class="spinner">
-                <div class="bounce1"></div>
-                <div class="bounce2"></div>
-                <div class="bounce3"></div>
-            </div>
-        </div>
-    </div>
-
-    <!-- header-area -->
-    <header>
-        <div id="main-header" class="header-area">
-            <div>
-                <div class="container position-relative">
-                    <div class="header-bottom">
-                        <div class="row align-items-center justify-content-start justify-content-lg-between">
-                            <div class="col-lg-2 col-md-3 col-sm-3 col-3">
-                                <div class="logo">
-                                    <a href="index.html"> <img src="assets/images/dmcon.png" alt=""></a>
-                                </div>
-                            </div>
-                            <div class="col-lg-8 d-none d-lg-block">
-                                <nav id="mobile-menu">
-                                    <ul class="main-menu main-menu2">
-                                        <li>
-                                            <a href="index.html">home </a>
-
-                                        </li>
-                                        <!-- <li><a href="about.html">about</a></li> -->
-                                        <!-- <li><a href="speakers.html">speakers</a></li> -->
-                                        <!-- <li><a href="schedule.html">schedule</a></li> -->
-                                        <!-- <li><a href="sponsor.html">sponsor</a></li> -->
-                                        <!-- <li><a href="ticket.html">ticket</a></li> -->
-                                        <li><a href="https://makemypass.com/event/dmcon2025">ticket</a></li>
-
-                                    </ul>
-                               
-                                </nav>
-                            </div>
-                            <!-- <div class="col-lg-2 col-md-6 col-sm-8 col-6">
-                                <div class="header-btn text-center text-lg-end">
-                              <a class="btn3" style="padding: 10px 10px !important" href="venue.html">Venue</a>
-                             
-                                </div>
-                            </div> -->
-                        </div>
-                        <div class="mobile-menu mobile-menu2"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- hero section -->
-    <div class="hero-area2">
-        <div class="hero_shapes">
-            <img src="assets/images/m_shape.png" alt="" class="vec_1">
-            <img src="assets/images/h2_shape1.png" alt="" class="vec_2">
-        </div>
-        <div class="container">
-            <div class="row align-items-center">
-
-
-                <div class="col-lg-6 col-md-12">
-                    <div class="hero-left">
-                        <div class="upper_cont">
-                            <span class="h1_txt">
-                                <span>DMCON 2025:<br></span>
-                             DevOps Conference Kerala
-                            </span>
-                            <p class="margin-top-30">
-                                Join us for DMCON 2025, the flagship annual event of DevOps Malayalam, on September 13th, 2025, in the vibrant city of Kochi!
-                            </p>
-                            <div class="btn_wrapper margin-top-30">
-                                <!-- <a href="ticket.html" class="btn3">get tickets</a> -->
-                                <!-- <a href="schedule.html" class="btn4">Our Schedule</a> -->
-                                 <a href="https://makemypass.com/event/dmcon2025" class="btn3">get tickets</a>
-                            </div>
-                        </div>
-                        <div class="row counter_wrapper countdown">
-    <div class="col-6 col-sm-3">
-        <div class="single-counter">
-            <div class="time-section">
-                <h2 id="days" style="color: #8100fe; font-family: Ubuntu, sans-serif;">00</h2>
-                <h6>Days</h6>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-6 col-sm-3">
-        <div class="single-counter">
-            <div class="time-section">
-                <h2 id="hours" style="color: #8100fe; font-family: Ubuntu, sans-serif;">00</h2>
-                <h6>Hours</h6>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-6 col-sm-3">
-        <div class="single-counter">
-            <div class="time-section">
-                <h2 id="minutes" style="color: #8100fe; font-family: Ubuntu, sans-serif;">00</h2>
-                <h6>Minutes</h6>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-6 col-sm-3">
-        <div class="single-counter">
-            <div class="time-section">
-                <h2 id="seconds" style="color: #8100fe; font-family: Ubuntu, sans-serif;">00</h2>
-                <h6>Seconds</h6>
-            </div>
-        </div>
-    </div>
-</div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-12">
-                    <div class="hero-right">
-                        <img src="assets/images/dmcon.png" alt="DMCon 2025 Banner" class="m-img" style="max-width: 60%; height: auto; padding-top: 40%; padding-left: 8%;">
-                        <img src="assets/images/h2_shape2.png" alt="" class="shape-1 item-rotate">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="social-links">
-            <a href="#"><span class="active"><i class="icofont-pinterest"></i></span></a>
-
-            <a href="#"><span><i class="icofont-facebook"></i></span></a>
-
-            <a href="#"><span><i class="fab fa-linkedin-in"></i></span></a>
-
-            <a href="#"><span><i class="icofont-twitter"></i></span></a>
-        </div>
-    </div>
-
-    <!-- Start of VIdeo Player -->
-
-<div style="width: 100%; max-width: 1440px; aspect-ratio: 16 / 9; overflow: hidden; margin: 0 auto; ">
-  <video src="https://github.com/DevOps-Malayalam/dmcon24/raw/refs/heads/main/assets/video/dmcon2025.mp4" autoplay muted loop playsinline 
-         style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px; display: block;">
-  </video>
-</div>
-
-<!-- End of Video Player -->
-
-    <div class="about-area2 padding-top-80 padding-bottom-120">
-        <div class="ashapes">
-            <img src="assets/images/h2_ashape1.png" alt="" class="vec1">
-            <img src="assets/images/h2_ashape2.png" alt="" class="vec2 d-none d-lg-block wow zoomIn">
-            <img src="assets/images/h2_ashape4.png" alt="" class="vec3 item-zooming d-none d-lg-block">
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-12 col-12 d-none d-lg-block wow fadeInLeft">
-                    <div class="about-left">
-                        <img src="assets/images/about_img copy.webp" alt="" class="m_img">
-                        <img src="assets/images/h2_ashape3.png" alt="" class="vec2">
-                    </div>
-                </div>
-
-                <div class="col-lg-6 col-md-12 col-12 wow fadeInRight">
-                    <div class="about-right">
-                        <div class="common-title2">
-                            <h2>about the event</h2>
-                            <p class="margin-top-20">
-                                Experience a premier event brimming with knowledge and excitement as we bring together DevOps enthusiasts, industry experts, and innovators under one roof. Whether you're a seasoned practitioner or just embarking on your DevOps journey, DMCON 2025 offers something for everyone.
-                            </p>
-                        </div>
-                        <div class="row margin-top-30">
-                            <div class="col-6">
-                                <div class="single-about">
-                                    <span><i class="icofont-eye"></i></span>
-                                    <h5> Unmatched Visibility </h5>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="single-about">
-                                    <span><i class="icofont-users-alt-5"></i></span>
-                                    <h5>Network with Industry Leaders</h5>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="single-about">
-                                    <span><i class="icofont-cubes"></i></span>
-                                    <h5> Be a Changemaker</h5>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="single-about">
-                                    <span><i class="icofont-star"></i></span>
-                                    <h5>Deep Dives & Insights</h5>
-                                </div>
-                            </div>
-
-                            <div class="col-6">
-                                <div class="single-about">
-                                    <span><i class="icofont-ui-home"></i></span>
-                                    <h5>Fun & Games</h5>
-                                </div>
-                            </div>
-
-                            <div class="col-6">
-                                <div class="single-about">
-                                    <span><i class="icofont-tag"></i></span>
-                                    <h5>Delicious Food</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- <a href="about.html" class="btn3">Know more</a> -->
-                         <a href="https://makemypass.com/event/dmcon2025" class="btn3">Get Tickets</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- join_ev area -->
-    <div class="join_ev_area padding-top-110 padding-bottom-90">
-        <div class="jshapes">
-            <img src="assets/images/j_shape1.png" alt="" class="vec1">
-            <img src="assets/images/j_shape2.png" alt="" class="vec2 item-zooming">
-            <img src="assets/images/j_shape3.png" alt="" class="vec3 item-animateOne">
-            <img src="assets/images/j_shape4.png" alt="" class="vec4">
-            <img src="assets/images/j_shape5.png" alt="" class="vec5 item-rotate">
-            <img src="assets/images/j_shape6.png" alt="" class="vec6 item-rotate">
-        </div>
-        
-        <!-- <div class="container">
-            <div class="row justify-content-center wow fadeInUp margin-bottom-20">
-                <div class="col-lg-7">
-                    <div class="common-title2 text-center">
-                        <h2>how to join events</h2>
-                        <p class="margin-top-20">
-                            Discover how to join events effortlessly. Follow simple steps for seamless participation.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-sm-6 col-12 wow fadeInUp" data-wow-delay=".2s">
-                    <div class="single-ev-2">
-                        <div class="icon-box">
-                            <span><i class="icofont-checked"></i></span>
-                        </div>
-                        <div class="cont-box">
-                            <h4>check schedule</h4>
-                            <p class="margin-top-20">
-
-                                Check the schedule for our one-day event and never miss out. Stay updated with all the latest timings and details.
-                            </p>
-                            <a href="schedule.html" class="btn4 margin-top-10">get now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 col-12 wow fadeInDown" data-wow-delay=".4s">
-                    <div class="single-ev-2 active">
-                        <div class="icon-box">
-                            <span><i class="icofont-mic"></i></span>
-                        </div>
-                        <div class="cont-box">
-                            <h4>choice speaker</h4>
-                            <p class="margin-top-20">
-                                Engage with experienced speakers in a dynamic setting. Enjoy insightful sessions across two-track events.
-                            </p>
-                            <a href="speakers.html" class="btn4 margin-top-10">get now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 col-12 wow fadeInUp" data-wow-delay=".6s">
-                    <div class="single-ev-2">
-                        <div class="icon-box">
-                            <span><i class="icofont-air-ticket"></i></span>
-                        </div>
-                        <div class="cont-box">
-                            <h4>booking events</h4>
-                            <p class="margin-top-20">
-                                Secure your spot with early bird tickets for the best rates. Don't miss out on exclusive deals and access.
-                            </p>
-                            <a href="ticket.html" class="btn4 margin-top-10">get now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-    </div>
-
-    <!-- about-area2 -->
-    <!-- e_speaker area -->
-    <!-- <div class="e_speaker-area padding-top-105 padding-bottom-120">
-        <div class="eshapes">
-            <img src="assets/images/e_vec.png" alt="" class="vec1 wow zoomIn">
-            <img src="assets/images/j_shape1.png" alt="" class="vec2">
-        </div>
-        <div class="container">
-            <div class="row justify-content-center margin-bottom-20">
-                <div class="col-lg-7 wow fadeInUp">
-                    <div class="common-title2 text-center">
-                        <h2>Key Note Speaker</h2>
-                        <p class="margin-top-20">
-                            Gain insights from industry-leading experts. Experience compelling sessions from our featured speaker.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <center>
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow zoomIn" data-wow-delay=".2s">
-                        <div class="single-speaker-2 active">
-                            <div class="img-box">
-                                <img src="assets/images/image2.webp" alt="">
-                            </div>
-                            <div class="cont-box">
-                                <h4><a href="#">Faseela K</a></h4>
-                                <h6>Cloud-Native Developer </h6>
-                                <h6>Steering Committee Member at Istio</h6>
-                            </div>
-                            <div class="social-links">
-
-                                <a href="https://www.linkedin.com/in/faseela-k-42178528/" target="_blank"><span><i class="fab fa-linkedin-in"></i></span></a>
-
-                            </div>
-                        </div>
-                    </div> <a href="schedule.html" class="btn3">Know more about Schedule</a>
-                </center>
-      
-            </div>
-        </div>
-    </div> 
-    -->
-    <!-- <div class="e_speaker-area  padding-bottom-120">
-        <div class="eshapes">
-            <img src="assets/images/e_vec.png" alt="" class="vec1 wow zoomIn">
-            <img src="assets/images/j_shape1.png" alt="" class="vec2">
-        </div>
-        <div class="container">
-            <div class="row justify-content-center margin-bottom-20">
-                <div class="col-lg-7 wow fadeInUp">
-                    <div class="common-title2 text-center">
-                        <h2>event speakers</h2>
-                        <p class="margin-top-20">
-                            Meet our distinguished event speakers who are experts in their fields.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow zoomIn" data-wow-delay=".2s">
-                    <div class="single-speaker-2 active">
-                        <div class="img-box">
-                            <img src="assets/images/e_3.jpg" alt="">
-                        </div>
-                        <div class="cont-box">
-                            <h4>
-                                Safeer C M
-                            </h4>
-                            <h6>
-                                SRE and DevOps Leader, CDF Ambassador
-                            </h6>
-                        </div>
-                        <div class="social-links">
-
-                            <a href="https://www.linkedin.com/in/safeer/" target="_blank"><span><i class="fab fa-linkedin-in"></i></span></a>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow zoomIn" data-wow-delay=".4s">
-                    <div class="single-speaker-2 active">
-                        <div class="img-box">
-                            <img src="assets/images/e_2.jpg" alt="">
-                        </div>
-                        <div class="cont-box">
-
-                            <h4>
-                                Siddharth Vijay
-                            </h4>
-
-                            <h6>
-                                AVP, Engg PokerBaazi (Baazi Games)
-                            </h6>
-                        </div>
-                        <div class="social-links">
-
-
-                            <a href="https://www.linkedin.com/in/siddharth-vijay-08134289/" target="_blank"><span><i class="fab fa-linkedin-in"></i></span></a>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow zoomIn" data-wow-delay=".2s">
-                    <div class="single-speaker-2 ">
-                        <div class="single-speaker-2 active">
-                            <div class="img-box">
-                                <img src="assets/images/e_4.jpg" alt="">
-                            </div>
-                            <div class="cont-box">
-
-                                <h4>
-                                    Ansil H
-                                </h4>
-
-                                <h6>
-                                    Lead SRE at CISCO<br />
-                                    <br />
-                                </h6>
-                            </div>
-                            <div class="social-links">
-
-
-                                <a href="https://www.linkedin.com/in/ansilh/" target="_blank"><span><i class="fab fa-linkedin-in"></i></span></a>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow zoomIn" data-wow-delay=".2s">
-                    <div class="single-speaker-2 active">
-                        <div class="img-box">
-                            <img src="assets/images/e_5.jpg" alt="">
-                        </div>
-                        <div class="cont-box">
-                            <h4>
-                                Sudhish Nair
-
-                            </h4>
-                            <h6>
-                                Senior Software Maintaince Engg, REDHAT
-                            </h6>
-                        </div>
-                        <div class="social-links">
-
-                            <a href="https://www.linkedin.com/in/sudhishnnair/" target="_blank"><span><i class="fab fa-linkedin-in"></i></span></a>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow zoomIn" data-wow-delay=".4s">
-                    <div class="single-speaker-2 active">
-                        <div class="img-box">
-                            <img src="assets/images/e_6.jpg" alt="">
-                        </div>
-                        <div class="cont-box">
-
-                            <h4>
-                                Remya Savithry
-
-                            </h4>
-
-                            <h6>
-                                Lead Platform Engineer, Zeropixels<br />
-                                <br />
-
-                            </h6>
-                        </div>
-                        <div class="social-links">
-
-
-                            <a href="https://www.linkedin.com/in/remya-savithry-126b4060/" target="_blank"><span><i class="fab fa-linkedin-in"></i></span></a>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow zoomIn" data-wow-delay=".4s">
-                    <div class="single-speaker-2 active">
-                        <div class="img-box">
-                            <img src="assets/images/e_9.jpg" alt="">
-                        </div>
-                        <div class="cont-box">
-
-                            <h4>
-                                Amit Kumar
-                            </h4>
-
-                            <h6>
-                                Sr Solutions Architect,AWS<br />
-                                <br />
-                            </h6>
-                        </div>
-                        <div class="social-links">
-
-
-                            <a href="https://www.linkedin.com/in/amitkyvmw/" target="_blank"><span><i class="fab fa-linkedin-in"></i></span></a>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow zoomIn" data-wow-delay=".4s">
-                    <div class="single-speaker-2 active">
-                        <div class="img-box">
-                            <img src="assets/images/e-8.jpg" alt="">
-                        </div>
-                        <div class="cont-box">
-
-                            <h4>
-                                Manoj Chandran
-
-                            </h4>
-
-                            <h6>
-                                Lead DevOps Engineer, UST<br />
-                                <br />
-
-                            </h6>
-                        </div>
-                        <div class="social-links">
-
-
-                            <a href="https://www.linkedin.com/in/manojchandran1/" target="_blank"><span><i class="fab fa-linkedin-in"></i></span></a>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow zoomIn" data-wow-delay=".4s">
-                    <div class="single-speaker-2 active">
-                        <div class="img-box">
-                            <img src="assets/images/e_7.jpg" alt="">
-                        </div>
-                        <div class="cont-box">
-
-                            <h4>
-                                Adil Mohamed M P
-                            </h4>
-
-                            <h6>
-                                Graduated CNCF Mentee at Istio<br />
-                                <br />
-
-                            </h6>
-                        </div>
-                        <div class="social-links">
-
-
-                            <a href="https://www.linkedin.com/in/adil-mohamed-6a199a253/" target="_blank"><span><i class="fab fa-linkedin-in"></i></span></a>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow zoomIn" data-wow-delay=".4s">
-                    <div class="single-speaker-2 active">
-                        <div class="img-box">
-                            <img src="assets/images/e_10.jpg" alt="">
-                        </div>
-                        <div class="cont-box">
-
-                            <h4>
-                                Sanjay S
-
-                            </h4>
-
-                            <h6>
-                                Senior DevOps Engineer<br />
-                                <br />
-
-                            </h6>
-                        </div>
-                        <div class="social-links">
-
-
-                            <a href="https://www.linkedin.com/in/sanjay-s-8086b354/" target="_blank"><span><i class="fab fa-linkedin-in"></i></span></a>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow zoomIn" data-wow-delay=".4s">
-                    <div class="single-speaker-2 active">
-                        <div class="img-box">
-                            <img src="assets/images/e_11.jpg" alt="">
-                        </div>
-                        <div class="cont-box">
-
-                            <h4>
-                                Aftab S
-                            </h4>
-
-                            <h6>
-                                Abilytics Inc<br />
-                                <br />
-
-                            </h6>
-                        </div>
-                        <div class="social-links">
-
-
-                            <a href="https://www.linkedin.com/in/aftab-s/" target="_blank"><span><i class="fab fa-linkedin-in"></i></span></a>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow zoomIn" data-wow-delay=".4s">
-                    <div class="single-speaker-2 active">
-                        <div class="img-box">
-                            <img src="assets/images/e_12.png" alt="">
-                        </div>
-                        <div class="cont-box">
-
-                            <h4>
-                                Anubhav Singh
-                            </h4>
-
-                            <h6>
-                                Co-founder - Callchimp.ai<br />
-                                <br />
-
-                            </h6>
-                        </div>
-                        <div class="social-links">
-
-
-                            <a href="https://www.linkedin.com/in/xprilion/" target="_blank"><span><i class="fab fa-linkedin-in"></i></span></a>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow zoomIn" data-wow-delay=".4s">
-                    <div class="single-speaker-2 active">
-                        <div class="img-box">
-                            <img src="assets/images/e_13.png" alt="">
-                        </div>
-                        <div class="cont-box">
-
-                            <h4>
-                                Sathish VJ
-                            </h4>
-
-                            <h6>
-                                Independent Consultant<br />
-                                <br />
-                            </h6>
-                        </div>
-                        <div class="social-links">
-
-
-                            <a href="https://www.linkedin.com/in/sathishvj/" target="_blank"><span><i class="fab fa-linkedin-in"></i></span></a>
-
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow zoomIn" data-wow-delay=".4s">
-                    <div class="single-speaker-2 active">
-                        <div class="img-box">
-                            <img src="assets/images/e_14.png" alt="">
-                        </div>
-                        <div class="cont-box">
-
-                            <h4>
-                                Ebin Babu
-                            </h4>
-
-                            <h6>
-                                Head Of Operations - Stackgenie
-                                <br />
-                                <br />
-                            </h6>
-                        </div>
-                        <div class="social-links">
-
-
-                            <a href="https://www.linkedin.com/in/ebin-babu/" target="_blank"><span><i class="fab fa-linkedin-in"></i></span></a>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow zoomIn" data-wow-delay=".4s">
-                    <div class="single-speaker-2 active">
-                        <div class="img-box">
-                            <img src="assets/images/e_15.webp" alt="">
-                        </div>
-                        <div class="cont-box">
-
-                            <h4>
-                                Kittu Sabu
-                            </h4>
-
-                            <h6>
-                                DevSecOps Engineer - Stackgenie
-                                <br />
-                                <br />
-                            </h6>
-                        </div>
-                        <div class="social-links">
-
-
-                            <a href="https://www.linkedin.com/in/sabukittu/" target="_blank"><span><i class="fab fa-linkedin-in"></i></span></a>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow zoomIn" data-wow-delay=".4s">
-                    <div class="single-speaker-2 active">
-                        <div class="img-box">
-                            <img src="assets/images/e_16.webp" alt="">
-                        </div>
-                        <div class="cont-box">
-
-                            <h4>
-                                Sajana Vijayan
-                            </h4>
-
-                            <h6>
-                                Software Engineering Lead at Boeing
-                            </h6>
-                        </div>
-                        <div class="social-links">
-
-
-                            <a href="https://www.linkedin.com/in/sajana-vijayan-1448a4aa/" target="_blank"><span><i class="fab fa-linkedin-in"></i></span></a>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow zoomIn" data-wow-delay=".4s">
-                    <div class="single-speaker-2 active">
-                        <div class="img-box">
-                            <img src="assets/images/e_17.webp" alt="">
-                        </div>
-                        <div class="cont-box">
-
-                            <h4>
-                                Alexy Thomas
-                            </h4>
-
-                            <h6>
-                                DevOps Engineer - Prevalent AI <br />
-                                <br />
-                            </h6>
-                        </div>
-                        <div class="social-links">
-
-
-                            <a href="https://www.linkedin.com/in/alexypulivelil/" target="_blank"><span><i class="fab fa-linkedin-in"></i></span></a>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow zoomIn" data-wow-delay=".6s">
-                <div class="single-speaker-2">
-                    <div class="img-box">
-                        <img src="assets/images/e_3.jpg" alt="">
-                    </div>
-                    <div class="cont-box">
-
-                        <h4><a href="about-single.html">flora Bowers </a></h4>
-
-                        <h6>Web Developer</h6>
-                    </div>
-                    <div class="social-links">
-
-                        <a href="#"><span><i class="icofont-facebook"></i></span></a>
-
-                        <a href="#"><span><i class="icofont-twitter"></i></span></a>
-
-                        <a href="#"><span><i class="fab fa-linkedin-in"></i></span></a>
-
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow zoomIn" data-wow-delay=".8s">
-                <div class="single-speaker-2">
-                    <div class="img-box">
-                        <img src="assets/images/e_4.jpg" alt="">
-                    </div>
-                    <div class="cont-box">
-                        <h4> <a href="about-single.html">Linard Bowers</a></h4>
-
-                        <h6>Web Developer</h6>
-                    </div>
-                    <div class="social-links">
-
-                        <a href="#"><span><i class="icofont-facebook"></i></span></a>
-
-                        <a href="#"><span><i class="icofont-twitter"></i></span></a>
-
-                        <a href="#"><span><i class="fab fa-linkedin-in"></i></span></a>
-
-                    </div>
-                </div>
-            </div>
-
-
-        </div> -->
-    </div> 
-
-
-
-    <!-- ev_gallery2 -->
-    <!-- <div class="ev_gallery2 padding-top-110">
-        <div class="container">
-            <div class="row justify-content-center margin-bottom-10">
-                <div class="col-lg-5">
-                    <div class="common-title2 text-center">
-                        <h2>event gallery</h2>
-                        <p class="margin-top-20">
-                            Explore highlights and memorable moments from past events. Relive the experience through our curated photo and video gallery.
-                        </p>
-                    </div>
-                </div>
-         </div>
-          -->
-            <!-- ev gallery nav -->
-
-        </div>
-
-        <!-- <div class="container-fluid margin-top-30">
-            <div class="row grid">
-                <div class="col-lg-6 col-xl-6 col-md-8 col-12 grid-item vdo">
-                    <div class="single-gallery vdo-gallery">
-                        <img src="assets/images/vdo.png" alt="">
-                        <div class="vdo_pop">
-                            <a class="popup-link" href="https://www.youtube.com/watch?v=mkA0z0dovNY">
-                                <span class="item-ripple2"><i class="fas fa-play"></i></span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-xl-3 col-md-4 col-sm-6 col-12 grid-item venu">
-                    <div class="single-gallery">
-                        <img src="assets/images/gal1.webp" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-3 col-xl-3 col-md-4 col-sm-6 col-12 grid-item mng">
-                    <div class="single-gallery">
-                        <img src="assets/images/gal2.webp" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-3 col-xl-3 col-md-4 col-sm-6 col-12 grid-item venu">
-                    <div class="single-gallery">
-                        <img src="assets/images/gal3.webp" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-3 col-xl-3 col-md-4 col-sm-6 col-12 grid-item mng">
-                    <div class="single-gallery">
-                        <img src="assets/images/gal4.webp" alt="">
-                    </div>
-                </div>
-            </div>
-
-
-
-            <div class="row grid">
-                <div class="col-lg-6 col-xl-6 col-md-8 col-12 grid-item vdo">
-                    <div class="single-gallery">
-                        <img src="assets/images/gal.webp" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-3 col-xl-3 col-md-4 col-sm-6 col-12 grid-item venu">
-                    <div class="single-gallery">
-                        <img src="assets/images/gal5.webp" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-3 col-xl-3 col-md-4 col-sm-6 col-12 grid-item mng">
-                    <div class="single-gallery">
-                        <img src="assets/images/gal6.webp" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-3 col-xl-3 col-md-4 col-sm-6 col-12 grid-item venu">
-                    <div class="single-gallery">
-                        <img src="assets/images/gal7.webp" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-3 col-xl-3 col-md-4 col-sm-6 col-12 grid-item mng">
-                    <div class="single-gallery">
-                        <img src="assets/images/gal-9.webp" alt="">
-                    </div>
-                </div>
-            </div>
-
-        </div> -->
-    </div>
-
-    <!-- ticket area -->
-    <!-- <div class="ticket-area ticket-area2 padding-top-80 padding-bottom-90">
-        <div class="tic_shapes">
-            <img src="assets/images/t_vec1.png" alt="" class="tvec_1">
-            <img src="assets/images/t_vec2.png" alt="" class="tvec_2">
-        </div>
-
-
-        <div class="container">
-            <div class="row justify-content-center margin-bottom-20">
-
-                <div class="col-lg-7">
-
-                    <div class="common-title2 text-center wow fadeInUp position-relative">
-
-                        <h2>explore flexible pricing plans</h2>  <div class="wp-block-group is-style-event-gradient has-white-color has-text-color btn3 " style="color: white !important; background: linear-gradient(157deg, #e100ff 0%, rgba(127,0,255,0.99608) 100%)">
-                            <div class="wp-block-group__inner-container is-layout-flow wp-block-group-is-layout-flow">
-                                <h6 style="color:white!important" class="wp-block-heading  has-text-align-center is-style-one-line-section-heading has-white-color has-text-color has-link-color wp-elements-9fc2c1b4a645e4e374f4059cdf280f36"><strong>Purchase bulk tickets and enjoy a 20% discount!</strong></h6>
-                            </div>
-                        </div>
-                        <p class="margin-top-20">
-                            Don't miss out on a day of cutting-edge discussions, diverse tracks featuring insightful sessions, and invaluable networking opportunities with over 300 attendees from across the DevOps community.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <br />
-            <div class="row">
-
-                <div class="col-lg-6 col-md-6 col-12 wow fadeInDown" data-wow-delay=".6s">
-                    <div class="single-ticket single-ticket2   active ">
-                        <div class="flag" style="font-size:15px">Special Offer</div>
-                        <h4>Last Call</h4>
-                        <h2>₹1,699/<span>1 person</span></h2>
-                        <div class="sep">
-                            <hr>
-                        </div>
-                        <ul>
-                            <li><h6 style="color:white">Bring your friends along and get a 20% discount on group ticket purchases (minimum of 5)!</h6></li>
-                            <li>  Regular Seating</li>
-                            <li> Access to all tracks and sessions</li>
-                            <li> Entry to sponsor and community booths</li>
-                            <li>  Participation in the Quiz</li>
-                            <li>  Networking opportunities with speakers</li>
-                            <li>   Exclusive event T-shirts and goodies</li>
-                            <li>   Delicious lunch and coffee breaks</li>
-
+    <div class="body-inner">
+        <!-- Header start -->
+        <header id="header" class="header header-transparent nav-border">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <!-- logo-->
+                    <a class="navbar-brand" href="index.html">
+                        <img src="images/logos/logo1.webp" alt="">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"><i class="icon icon-menu"></i></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav ml-auto">
+                            <li class=" nav-item active">
+                                <a href="cfp.html" class="">CFP </a>
+
+                            </li>
+                            <li class=" nav-item">
+                                <a href="venue.html" class="">Venue </a>
+
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://devopsmalayalam.io/" target="_blank" class="">Contact </a>
+
+
+                            </li>
+                            <!--<li class="nav-item dropdown">
+                           <a href="#" class="" data-toggle="dropdown">Schedule <i class="fa fa-angle-down"></i></a>
+                           <ul class="dropdown-menu" role="menu">
+                                 <li><a href="schedule-list.html">Schedule List</a></li>
+                                 <li><a href="schedule-tab-1.html">Schedule Tab 1</a></li>
+                                 <li><a href="schedule-tab-2.html">Schedule Tab 2</a></li>
+                           </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                           <a href="#"> Blog <i class="fa fa-angle-down"></i></a>
+                           <ul class="dropdown-menu" role="menu">
+                              <li><a href="blog.html">Blog</a></li>
+                              <li><a href="news-single.html">Blog Details</a></li>
+                           </ul>
+                        </li>
+                        <li class="nav-item">
+                           <a href="contact.html">Contact</a>
+                        </li>-->
+                            <li class="header-ticket nav-item">
+                                <a class="ticket-btn btn" target="_blank" href="https://makemypass.com/event/dmcon2025">
+                                    Buy  Ticket
+                                </a>
+                            </li>
                         </ul>
-                        <a target="_blank" class="btn4">Sold Out</a>
                     </div>
-                </div>
-
-                <div class="col-lg-6 col-md-6 col-12 wow fadeInDown" data-wow-delay=".2s">
-                    <div class="single-ticket single-ticket2  ">
-                        <h4>Onsite</h4>
-                        <h2>₹2,999/<span>1 person</span></h2>
-                        <div class="sep">
-                            <hr>
-                        </div>
-                        <ul>
-
-                            <li>  Regular Seating</li>
-                            <li> Access to all tracks and sessions</li>
-                            <li> Entry to sponsor and community booths</li>
-                            <li>  Participation in the Quiz</li>
-                            <li>  Networking opportunities with speakers</li>
-                            <li>   Exclusive event T-shirts and goodies</li>
-                            <li>   Delicious lunch and coffee breaks</li>
-                            <br />
-
-
-                        </ul>
-                        <a  target="_blank" class="btn4">Sold Out</a>
-                    </div>
-                </div>
-
-
-
-
-            </div>
-
-
-
-
-        </div>
-
-    </div> -->
-    <!-- brand area -->
-
-    <!-- <div class="brand-area brand-area2 padding-top-110 padding-bottom-90">
-        <div class="container">
-            <div class="row justify-content-center margin-bottom-20">
-                <div class="col-lg-6">
-                    <div class="common-title2 text-center wow fadeInUp">
-                        <h2>our great sponsor</h2>
-                        <p class="margin-top-20">
-                            We extend our gratitude to our amazing sponsors. Their support makes our event possible and successful.
-                        </p>
-
-                    </div>
-                </div>
-            </div>
-
-
-        </div>
-        <div class="container">
-            <div class="row justify-content-center margin-bottom-20">
-                <div class="col-lg-6">
-                    <div class="common-title2 text-center wow fadeInUp">
-
-                        <br />
-                        <h3>Gold Sponsor</h3>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row justify-content-center">
-                <div class="col-lg-4 col-md-6 col-sm-6 col-12 " data-wow-delay=".2s">
-                    <div class="single-brand">
-                        <a href="https://developers.google.com/" target="_blank">     <img src="assets/images/s-2.webp" alt=""></a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <div class="container">
-            <div class="row justify-content-center margin-bottom-20">
-                <div class="col-lg-6">
-                    <div class="common-title2 text-center wow fadeInUp">
-
-                        <br />
-                        <h3>Bronze Sponsor</h3>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row justify-content-center">
-                <div class="col-lg-4 col-md-6 col-sm-6 col-12 wow zoomIn" data-wow-delay=".2s">
-                    <div class="single-brand">
-                        <a href="https://www.stackgenie.io/" target="_blank">     <img src="assets/images/s-1.webp" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 col-12 wow zoomIn" data-wow-delay=".2s">
-                    <div class="single-brand">
-                        <a href="https://admod.com/" target="_blank">     <img src="assets/images/s-5.webp" alt=""></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row justify-content-center margin-bottom-20">
-                <div class="col-lg-6">
-                    <div class="common-title2 text-center wow fadeInUp">
-
-                        <br />
-                        <h3>Startup Sponsor</h3>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row justify-content-center">
-                <div class="col-lg-4 col-md-6 col-sm-6 col-12 wow zoomIn" data-wow-delay=".2s">
-                    <div class="single-brand">
-                        <a href="https://www.onepane.ai/" target="_blank">     <img src="assets/images/s-3.webp" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 col-12 wow zoomIn" data-wow-delay=".2s">
-                    <div class="single-brand">
-                        <a href="https://cyberdisti.com/" target="_blank">     <img src="assets/images/s-4.webp" alt=""></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
-    <!-- <div class="brand-area brand-area2  padding-bottom-90">
-        <div class="container">
-            <div class="row justify-content-center margin-bottom-20">
-                <div class="col-lg-12">
-                    <div class="common-title2 text-center wow fadeInUp">
-                        <h2>our Community Supporter</h2>
-
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow zoomIn" data-wow-delay=".2s">
-                    <div class="single-brand">
-                        <img src="assets/images/c-p-1.png" alt="">
-                    </div>
-                </div>
-
-
-            </div>
-        </div>
-    </div> -->
-    <!-- testi-area2 -->
-    <div class="testi-area2 padding-top-110 padding-bottom-110">
-        <div class="tshapes">
-            <img src="assets/images/q1.png" alt="" class="vec1">
-            <img src="assets/images/q2.png" alt="" class="vec2">
-        </div>
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <div class="common-title2 text-center wow fadeInUp">
-                        <h2>what people say</h2>
-                        <p class="margin-top-20">
-                            Hear from our attendees about their enriching experiences and insights gained. Discover the impact of our events through their testimonials.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="testi2-slider-active">
-                <div class="col-lg-4">
-                    <div class="single-testi2">
-                        <div class="upper-cont">
-                            <div class="img-box">
-                                <!--<img src="assets/images/t1.png" alt="">-->
-                            </div>
-                            <div class="cont-box">
-                                <div class="review">
-                                    <span><i class="icofont-star"></i></span>
-                                    <span><i class="icofont-star"></i></span>
-                                    <span><i class="icofont-star"></i></span>
-                                    <span><i class="icofont-star"></i></span>
-                                    <span><i class="icofont-star"></i></span>
-                                </div>
-                                <h4>
-                                    Mohammed Bilal
-                                </h4>
-                                <h6>Student</h6>
-                            </div>
-                        </div>
-                        <div class="lower-cont">
-                            <p>
-                                As of now i am working in a non IT background job. I wish switch to IT field, especially DevOps. I am so happy atleast we have strong community in Malayalam. As a beginner if you can do more sessions like from zero to a Good DevOps engineer it would be very useful to us. I am expecting more sessions about tools, especially project based approch. Thank you for the wonderful session.
-                            </p>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="single-testi2">
-                        <div class="upper-cont">
-                            <div class="img-box">
-                            </div>
-                            <div class="cont-box">
-                                <div class="review">
-                                    <span><i class="icofont-star"></i></span>
-                                    <span><i class="icofont-star"></i></span>
-                                    <span><i class="icofont-star"></i></span>
-                                    <span><i class="icofont-star"></i></span>
-                                    <span><i class="icofont-star"></i></span>
-                                </div>
-                                <h4>
-                                    Pranoy V
-                                </h4>
-                                <h6>Entry Level</h6>
-                            </div>
-                        </div>
-                        <div class="lower-cont">
-                            <p>
-                                Thank you so much for the excellent session. Special thanks to Sijo sir and all the coordinators of DevOps Malayalam for their hard work and dedication. The insights and knowledge shared were invaluable. I truly appreciate the effort and organization put into this event. I will definitely recommend our group to my friends circle
-                                <br />
-                                <br />
-                            </p>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="single-testi2">
-                        <div class="upper-cont">
-                            <div class="img-box">
-
-                            </div>
-                            <div class="cont-box">
-                                <div class="review">
-                                    <span><i class="icofont-star"></i></span>
-                                    <span><i class="icofont-star"></i></span>
-                                    <span><i class="icofont-star"></i></span>
-                                    <span><i class="icofont-star"></i></span>
-                                    <span><i class="icofont-star"></i></span>
-                                </div>
-                                <h4>
-                                    Sajeer
-                                </h4>
-                                <h6>Mid Level</h6>
-                            </div>
-                        </div>
-                        <div class="lower-cont">
-                            <p>
-                                Thank you for conducting this great workshop session. The presentation style was excellent, providing lots of opportunities to ask questions and discuss real-life examples. The hands-on approach made the learning experience very practical and engaging. I truly appreciate the effort put into organizing this event. I'm looking forward to more such sessions on different DevOps topics.
-                            </p>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="single-testi2">
-                        <div class="upper-cont">
-                            <div class="img-box">
-                            </div>
-                            <div class="cont-box">
-                                <div class="review">
-                                    <span><i class="icofont-star"></i></span>
-                                    <span><i class="icofont-star"></i></span>
-                                    <span><i class="icofont-star"></i></span>
-                                    <span><i class="icofont-star"></i></span>
-                                    <span><i class="icofont-star"></i></span>
-                                </div>
-                                <h4>nitta mathew</h4>
-                                <h6>
-                                    Mid level
-                                </h6>
-                            </div>
-                        </div>
-                        <div class="lower-cont">
-                            <p>
-                                I gained a deeper understanding of autoscalers during this wonderful session. The presentation was clear and insightful, providing practical knowledge. A big shout out to DevOps Malayalam for organizing such a great event. The effort put into making this session valuable is truly appreciated. I'm looking forward to more informative sessions like this.
-                                <br />
-                                <br />
-                            </p>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="single-testi2">
-                        <div class="upper-cont">
-                            <div class="img-box">
-                            </div>
-                            <div class="cont-box">
-                                <div class="review">
-                                    <span><i class="icofont-star"></i></span>
-                                    <span><i class="icofont-star"></i></span>
-                                    <span><i class="icofont-star"></i></span>
-                                    <span><i class="icofont-star"></i></span>
-                                    <span><i class="icofont-star"></i></span>
-                                </div>
-                                <h4>Rajeev Thayyil</h4>
-                                <h6>Mid level</h6>
-                            </div>
-                        </div>
-                        <div class="lower-cont">
-                            <p>
-                                Very informative in general, the session provided valuable insights. It was great to hear the real-time experiences of many members who are already working in this field. The shared knowledge and practical examples were incredibly beneficial. A big thank you to DevOps Malayalam for organizing such a fantastic event. Looking forward to more sessions like this!
-                            </p>
-
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <!-- blog-area2 -->
-
-    <!-- <div class="brand-area brand-area2 padding-top-110 padding-bottom-90">
-        <div class="container">
-            <div class="row justify-content-center margin-bottom-20">
-                <div class="col-lg-6">
-                    <div class="common-title2 text-center wow fadeInUp">
-                        <h2>our Community Partners</h2>
-                        <p class="margin-top-20">
-                            Celebrating our collaboration with dedicated community partners. Together, we create impactful and memorable events.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow zoomIn" data-wow-delay=".2s">
-                    <div class="single-brand">
-                        <img src="assets/images/c-1.webp" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow zoomIn" data-wow-delay=".4s">
-                    <div class="single-brand">
-                        <img src="assets/images/c-2.webp" alt="">
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow zoomIn" data-wow-delay=".4s">
-                    <div class="single-brand">
-                        <img src="assets/images/c-3.webp" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow zoomIn" data-wow-delay=".6s">
-                    <div class="single-brand">
-                        <img src="assets/images/c-4.webp" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow zoomIn" data-wow-delay=".8s">
-                    <div class="single-brand">
-                        <img src="assets/images/c-5.webp" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow zoomIn" data-wow-delay=".2s">
-                    <div class="single-brand">
-                        <img src="assets/images/c-6.webp" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow zoomIn" data-wow-delay=".2s">
-                    <div class="single-brand">
-                        <img src="assets/images/c-7.webp" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow zoomIn" data-wow-delay=".4s">
-                    <div class="single-brand">
-                        <img src="assets/images/c-8.webp" alt="">
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow zoomIn" data-wow-delay=".4s">
-                    <div class="single-brand">
-                        <img src="assets/images/c-9.webp" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow zoomIn" data-wow-delay=".6s">
-                    <div class="single-brand">
-                        <img src="assets/images/c-10.webp" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow zoomIn" data-wow-delay=".8s">
-                    <div class="single-brand">
-                        <img src="assets/images/c-11.webp" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow zoomIn" data-wow-delay=".2s">
-                    <div class="single-brand">
-                        <img src="assets/images/c-12.webp" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow zoomIn" data-wow-delay=".4s">
-                    <div class="single-brand">
-                        <img src="assets/images/c-13.webp" alt="">
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow zoomIn" data-wow-delay=".4s">
-                    <div class="single-brand">
-                        <img src="assets/images/c-14.webp" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow zoomIn" data-wow-delay=".6s">
-                    <div class="single-brand">
-                        <img src="assets/images/c-15.webp" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12 wow zoomIn" data-wow-delay=".8s">
-                    <div class="single-brand">
-                        <img src="assets/images/c-16.webp" alt="">
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div> -->
-
-    
-    <footer>
-        <div class="footer-area footer-area2">
-            <div class="foo_top padding-top-120 padding-bottom-65">
+                </nav>
+            </div><!-- container end-->
+        </header>
+        <!--/ Header end -->
+        <!-- banner start-->
+        <section class="main-slider owl-carousel">
+            <div class="banner-item overlay" style="background-image:url(images/hero_area/banner3.webp)">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-4 col-md-6 col-sm-6 col-12 wow fadeInUp" data-wow-delay=".2s">
-                            <div class="foo-widget">
-                                <div class="logo">
-                                    <a href="index.html"> <img src="assets/images/dmcon.png" alt=""></a>
+                        <div class="col-lg-11 mx-auto">
+                            <div class="banner-content-wrap text-center">
+                                <img class="title-shap-img" src="images/shap/title-white.png" alt="">
+                                <p class="banner-info">13th September 2025 ,Kochi, India</p>
+                                <h1 class="banner-title">#Kerala's Premier DevOps Conference</h1>
+
+                                <p class="banner-desc">
+                                    Shaping the future of DevOps in India and beyond through collaboration, learning, and real-world insights.
+                                </p>
+                                <!-- Countdown end -->
+                                <div class="banner-btn">
+                                    <a href="#" class="btn" style="background-color: #f3f3f3 !important; color: #000d4b!important">REGISTER</a>
+                                    <a href="#" class="btn" style="background-color: #f3f3f3 !important; color: #000d4b!important">SPONSER</a>
+                                    <a href="#" class="btn" style="background-color: #f3f3f3 !important; color: #000d4b!important">CFP</a>
                                 </div>
-                                <p>Join us for DMCON 2025, the flagship annual event of DevOps Malayalam, on September 13th, 2025, in the vibrant city of Kochi!</p>
-                                <div class="social-links">
-                                    <a href="https://www.linkedin.com/company/devopsmalayalam/"><span class="active"><i class="fab fa-linkedin-in"></i></span></a>
+
+                            </div>
+                            <!-- Banner content wrap end -->
+                        </div><!-- col end-->
+
+                    </div><!-- row end-->
+                </div>
+                <!-- Container end -->
+            </div><!-- banner item end-->
+            <!--<div class="banner-item overlay" style="background-image:url(images/hero_area/banner4.jpg)">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 mx-auto">
+                        <div class="banner-content-wrap text-center">
+                            <img class="title-shap-img" src="images/shap/title-white.png" alt="">
+                            <p class="banner-info">5 to 7 June 2019, Waterfront Hotel, London</p>
+                            <h1 class="banner-title">digital thinkers Meet up</h1>
+
+                            <p class="banner-desc">
+                                How you transform your business as technology, consumer, habits industry dynamic
+                                s change? Find out from those leading the charge.
+                            </p>-->
+            <!-- Countdown end -->
+            <!--<div class="banner-btn">
+                <a href="#" class="btn">Get Ticket</a>
+                <a href="#" class="btn fill">Know More</a>
+            </div>
+
+        </div>-->
+            <!-- Banner content wrap end -->
+            <!--</div>--><!-- col end-->
+            <!--</div>--><!-- row end-->
+            <!--</div>-->
+            <!-- Container end -->
+            <!--</div>--><!-- banner item end-->
+            <!-- banner item end-->
+
+        </section>
+        <!-- banner end-->
+        <!--count down start-->
+        
+
+        <section class="ts-count-down" style="background-color: #f9fafc!important;padding-top:65px !important">
+            <div class="container">
+
+                <div class="countdown">
+                    <div class="counter-item">
+                        <i class="icon icon-ring-1Asset-1"></i>
+                        <span id="days" class="days">00</span>
+                        <div class="smalltext">Days</div>
+
+                    </div>
+                    <div class="counter-item">
+                        <i class="icon icon-ring-4Asset-3"></i>
+                        <span id="hours" class="days">00</span>
+                        <div class="smalltext">Hours</div>
+                    </div>
+
+                    <div class="counter-item">
+                        <i class="icon icon-ring-3Asset-2"></i>
+                        <span id="minutes" class="days">00</span>
+                        <div class="smalltext">Minutes</div>
+                    </div>
+                    <div class="counter-item">
+                        <i class="icon icon-ring-4Asset-3"></i>
+                        <span id="seconds" class="days">00</span>
+                        <div class="smalltext">Seconds</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
 
 
-                                    <a href="https://www.facebook.com/DevOpsMalayalam"><span><i class="icofont-facebook"></i></span></a>
+        <script>
+            // Set the date we're counting down to
+            var countDownDate = new Date("September 13, 2025 09:00:00").getTime();
 
-                                    <a href="https://x.com/DevopsMalayalam?t=QCJR8sM26ALWuvgD6ZmIaQ&s=08"><span><i class="icofont-twitter"></i></span></a>
+            // Update the count down every 1 second
+            var x = setInterval(function () {
+
+                // Get today's date and time
+                var now = new Date().getTime();
+
+                // Find the distance between now and the count down date
+                var distance = countDownDate - now;
+
+                // Time calculations for days, hours, minutes and seconds
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Output the result in respective elements
+                document.getElementById("days").innerHTML = days;
+                document.getElementById("hours").innerHTML = hours;
+                document.getElementById("minutes").innerHTML = minutes;
+                document.getElementById("seconds").innerHTML = seconds;
+
+                // If the count down is over, write some text
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("days").innerHTML = "00";
+                    document.getElementById("hours").innerHTML = "00";
+                    document.getElementById("minutes").innerHTML = "00";
+                    document.getElementById("seconds").innerHTML = "00";
+                }
+            }, 1000);
+        </script>
+        <!--count down end-->
+        <section class="ts-intro-item section-bg" >
+            <div class="container">
+                <div class="row">
+                    <center>
+                        <p style="text-align:justify">
+                            Join us at DMCON 2025, Kerala’s premier DevOps and cloud native conference, happening in Kochi on September 13, 2025. This community-driven event brings together engineers, architects, and practitioners from across the DevOps and cloud native ecosystem.
+                        </p>
+                        <p style="text-align:justify">
+                            Be part of the conversation as leading voices, emerging talent, and open source contributors come together for a full day of collaboration, learning, and real-world insights — shaping the future of DevOps in India and beyond.
+                        </p>
+                    </center>
 
 
-                                    <a href="https://www.youtube.com/channel/UC2Ed4a2EWJJGsRctTUCO6oA"><span><i class="icofont-youtube"></i></span></a>
+                </div><!-- row end-->
+            </div><!-- container end-->
+        </section>
+        <!--<section class="ts-intro-item section-bg" style="padding-top:180px !important">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="300ms">
+                <div class="intro-left-content">
+                    <h2 class="column-title">
+                        <span>Why Join Exhibit</span>
+                        Why you should
+                        Join Event
+                    </h2>
+                    <p>
+                        How you transform your business as tech, consumer, habits industry dynamic change, Find
+                        out from those leading the charge.
+                    </p>
+                    <a href="#" class="btn">Buy Ticket</a>
+                </div>
+            </div>-->
+        <!-- col end-->
+        <!--<div class="col-lg-8">
+    <div class="row">
+        <div class="col-lg-6 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="400ms">
+            <div class="single-intro-text mb-30">
+                <i class="icon icon-speaker"></i>
+                <h3 class="ts-title">Great Speakers</h3>
+                <p>
+                    How you transform your business as technology, consumer, habits industry dynamic
+                </p>
+                <span class="count-number">01</span>
+            </div>-->
+        <!-- single intro text end-->
+        <!--</div>--><!-- col end-->
+        <!--<div class="col-lg-6 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="500ms">
+    <div class="single-intro-text mb-30">
+        <i class="icon icon-netwrorking"></i>
+        <h3 class="ts-title">New People</h3>
+        <p>
+            How you transform your business as technology, consumer, habits industry dynamic
+        </p>
+        <span class="count-number">02</span>
+    </div>-->
+        <!-- single intro text end-->
+        <!--</div>--><!-- col end-->
+        <!--<div class="col-lg-6 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="600ms">
+    <div class="single-intro-text mb-30">
+        <i class="icon icon-people"></i>
+        <h3 class="ts-title">Networking</h3>
+        <p>
+            How you transform your business as technology, consumer, habits industry dynamic
+        </p>
+        <span class="count-number">03</span>
+    </div>-->
+        <!-- single intro text end-->
+        <!--</div>--><!-- col end-->
+        <!--<div class="col-lg-6 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="700ms">
+    <div class="single-intro-text mb-30">
+        <i class="icon icon-fun"></i>
+        <h3 class="ts-title">Have Fun</h3>
+        <p>
+            How you transform your business as technology, consumer, habits industry dynamic
+        </p>
+        <span class="count-number">04</span>
+    </div>-->
+        <!-- single intro text end-->
+        <!--</div>--><!-- col end-->
+        <!--</div>
+    </div>-->
+        <!-- col end-->
+        <!--</div>--><!-- row end-->
+        <!--</div>--><!-- container end-->
+        <!--</section>-->
+        <!-- ts intro start -->
+        <!--experience -->
+        <section id="ts-experiences" class="ts-experiences">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-6 no-padding">
+                        <div class="about-video">
+                            <img class="exp-img" src="images/youtube_video.webp" alt="">
+                            <a href="image/DmCon24.mp4" class="video-btn ts-video-popup"><i class="icon icon-play"></i></a>
+                        </div>
+
+
+                    </div><!-- col end-->
+                    <div class="col-lg-6 no-padding align-self-center wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="500ms">
+                        <div class="ts-exp-wrap">
+                            <div class="ts-exp-content">
+                                <h2 class="column-title">
+                                    <span>Get Experience</span>
+                                    Empowering DevOps Minds, Together United
+                                </h2>
+                                <p>
+                                    Experience a premier event brimming with knowledge and excitement as we bring together DevOps enthusiasts, industry experts, and innovators under one roof.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div><!-- col end-->
+                </div><!-- row end-->
+            </div><!-- container fluid end-->
+        </section>
+
+        <!--Schedule -->
+        <section class="ts-schedule">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <h2 class="section-title">
+                            <span>Schedule Details</span>
+                            Event Schedules
+                        </h2>
+                        <div class="ts-schedule-nav">
+                            <ul class="nav nav-tabs justify-content-center" role="tablist">
+                                <li class="nav-item">
+                                    <a class="active" title="Click Me" href="#date1" role="tab" data-toggle="tab">
+                                        <h3>Track 1</h3>
+                                        <!--<span>Venue Name</span>-->
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="" href="#date2" title="Click Me" role="tab" data-toggle="tab">
+                                        <h3>Track 2</h3>
+                                        <!--<span>Venue Name</span>-->
+                                    </a>
+                                </li>
+
+                            </ul>
+                            <!-- Tab panes -->
+                        </div>
+                    </div><!-- col end-->
+
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="tab-content schedule-tabs">
+                            <div role="tabpanel" class="tab-pane active" id="date1">
+                                <div class="schedule-listing">
+                                    <div class="schedule-slot-time">
+                                        <span> 13th September 2025</span>
+
+                                    </div>
+                                    <div class="schedule-slot-info">
+                                        <!--<a href="#">
+                                        <img class="schedule-slot-speakers" src="images/speakers/speaker1.jpg" alt="">
+                                    </a>-->
+                                        <div class="schedule-slot-info-content">
+                                            <!--<h3 class="schedule-slot-title">
+                                            Marketing Matters!
+                                            <strong>@ Fredric Martinsson</strong>
+                                        </h3>-->
+                                            <p>
+                                                <strong>  9:00 AM  </strong> | Breakfast + Registration Open
+                                                <br />
+                                                <strong>  10:15 AM - 5:00 PM   </strong> | Keynotes, Breakout Sessions, Code Labs
+                                                <br />
+                                                <strong>  5:00 PM   </strong> | Happy Hour
+
+                                            </p>
+                                        </div>
+                                        <!--Info content end -->
+                                    </div><!-- Slot info end -->
                                 </div>
+                                <!--schedule-listing end -->
+                                <!--<div class="schedule-listing">
+                            <div class="schedule-slot-time" style="color:white !important">
+                                <span> 10.30 - 11.30 AM</span>
+                                Workshop
                             </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-6 col-12 wow fadeInUp" data-wow-delay=".4s">
-                            <div class="foo-widget">
-                                <h4 class="margin-bottom-20">usefull links</h4>
-                                <ul>
-                                    <li><a href="index.html">home</a> </li>
-                                    <!-- <li><a href="about.html">about</a> </li> -->
-                                    <!-- <li><a href="sponsor.html">sponsor</a></li> -->
-                                    <!-- <li><a href="speakers.html">speakers</a></li> -->
-                                    <li><a href="https://makemypass.com/event/dmcon2025">Ticket</a></li>
-                                </ul>
+                            <div class="schedule-slot-info">
+                                <a href="#">
+                                    <img class="schedule-slot-speakers" src="images/speakers/speaker2.jpg" alt="">
+                                </a>
+                                <div class="schedule-slot-info-content">
+                                    <h3 class="schedule-slot-title">
+                                        Reinventing Experiences
+                                        <strong>@ Melisa Lundryn</strong>
+                                    </h3>
+                                    <p>
+                                        How you transform your business as
+                                        technology, consumer, habits industry dynamics change? Find out from
+                                        those leading the charge. How you transform
+                                    </p>
+                                </div>-->
+                                <!--Info content end -->
+                                <!--</div>--><!-- Slot info end -->
+                                <!--</div>-->
+                                <!--schedule-listing end -->
+                                <!--<div class="schedule-listing">
+                            <div class="schedule-slot-time">
+                                <span> 11.30 - 12.30 PM</span>
+                                Workshop
                             </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-6 col-12 wow fadeInUp" data-wow-delay=".6s">
-                            <div class="foo-widget">
-                                <h4 class="margin-bottom-20">contact us</h4>
-                                <ul>
-
-                                    <li>
-                                        <span><i class="icofont-email"></i></span>mod@devopsmalayalam.io
-                                    </li>
-
-                                </ul>
+                            <div class="schedule-slot-info">
+                                <a href="#">
+                                    <img class="schedule-slot-speakers" src="images/speakers/speaker3.jpg" alt="">
+                                </a>
+                                <div class="schedule-slot-info-content">
+                                    <h3 class="schedule-slot-title">
+                                        Cultures of Creativity
+                                        <strong>@ Johnsson Agaton</strong>
+                                    </h3>
+                                    <p>
+                                        How you transform your business as
+                                        technology, consumer, habits industry dynamics change? Find out from
+                                        those leading the charge. How you transform
+                                    </p>
+                                </div>-->
+                                <!--Info content end -->
+                                <!--</div>--><!-- Slot info end -->
+                                <!--</div>-->
+                                <!--schedule-listing end -->
+                                <!--<div class="schedule-listing launce" >
+                            <div class="schedule-slot-time" style="color:white !important">
+                                <span> 12.30 - 01.30 PM</span>
                             </div>
-                        </div>
+                            <div class="schedule-slot-info">
 
+                                <div class="schedule-slot-info-content">
+                                    <h3 class="schedule-slot-title">
+                                        Lunch Break
+                                        <strong>@ Rebecca Henrikon</strong>
+                                    </h3>
+                                    <a href="#">
+                                        <img src="images/schedule_lunch.png" alt="">
+                                    </a>
+                                </div>-->
+                                <!--Info content end -->
+                                <!--</div>--><!-- Slot info end -->
+                                <!--</div>-->
+                                <!--schedule-listing end -->
+                                <!--<div class="schedule-listing">
+                            <div class="schedule-slot-time">
+                                <span> 01.30 - 02.30 PM</span>
+                                Workshop
+                            </div>
+                            <div class="schedule-slot-info">
+                                <a href="#">
+                                    <img class="schedule-slot-speakers" src="images/speakers/speaker4.jpg" alt="">
+                                </a>
+                                <div class="schedule-slot-info-content">
+                                    <h3 class="schedule-slot-title">
+                                        Human Centered Design
+                                        <strong>@ Agaton Johnsson</strong>
+                                    </h3>
+                                    <p>
+                                        How you transform your business as
+                                        technology, consumer, habits industry dynamics change? Find out from
+                                        those leading the charge. How you transform
+                                    </p>
+                                </div>-->
+                                <!--Info content end -->
+                                <!--</div>--><!-- Slot info end -->
+                                <!--</div>-->
+                                <!--schedule-listing end -->
+
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="date2">
+                                <div class="schedule-listing">
+                                    <div class="schedule-slot-time">
+                                        <span> 13th September 2025</span>
+
+                                    </div>
+                                    <div class="schedule-slot-info">
+                                        <!--<a href="#">
+                                        <img class="schedule-slot-speakers" src="images/speakers/speaker1.jpg" alt="">
+                                    </a>-->
+                                        <div class="schedule-slot-info-content">
+                                            <!--<h3 class="schedule-slot-title">
+                                            Marketing Matters!
+                                            <strong>@ Fredric Martinsson</strong>
+                                        </h3>-->
+                                            <p>
+                                                <strong>  9:00 AM  </strong> | Breakfast + Registration Open
+                                                <br />
+                                                <strong>  10:15 AM - 5:00 PM   </strong> | Keynotes, Breakout Sessions, Code Labs
+                                                <br />
+                                                <strong>  5:00 PM   </strong> | Happy Hour
+
+                                            </p>
+                                        </div>
+                                        <!--Info content end -->
+                                    </div><!-- Slot info end -->
+                                </div>
+                                <!--schedule-listing end -->
+                                <!--<div class="schedule-listing">
+                            <div class="schedule-slot-time" style="color:white !important">
+                                <span> 03.30 - 04.30 PM</span>
+                                Workshop
+                            </div>
+                            <div class="schedule-slot-info">
+                                <a href="#">
+                                    <img class="schedule-slot-speakers" src="images/speakers/speaker6.jpg" alt="">
+                                </a>
+                                <div class="schedule-slot-info-content">
+                                    <h3 class="schedule-slot-title">
+                                        Reinventing Experiences
+                                        <strong>@ Fredric Martinsson</strong>
+                                    </h3>
+                                    <p>
+                                        How you transform your business as
+                                        technology, consumer, habits industry dynamics change? Find out from
+                                        those leading the charge. How you transform
+                                    </p>
+                                </div>-->
+                                <!--Info content end -->
+                                <!--</div>--><!-- Slot info end -->
+                                <!--</div>-->
+                                <!--schedule-listing end -->
+                                <!--<div class="schedule-listing">
+                            <div class="schedule-slot-time">
+                                <span> 04.30 - 05.30 PM</span>
+                                Workshop
+                            </div>
+                            <div class="schedule-slot-info">
+                                <a href="#">
+                                    <img class="schedule-slot-speakers" src="images/speakers/speaker7.jpg" alt="">
+                                </a>
+                                <div class="schedule-slot-info-content">
+                                    <h3 class="schedule-slot-title">
+                                        Cultures of Creativity
+                                        <strong>@ Hall  Building</strong>
+                                    </h3>
+                                    <p>
+                                        How you transform your business as
+                                        technology, consumer, habits industry dynamics change? Find out from
+                                        those leading the charge. How you transform
+                                    </p>
+                                </div>-->
+                                <!--Info content end -->
+                                <!--</div>--><!-- Slot info end -->
+                                <!--</div>-->
+                                <!--schedule-listing end -->
+                                <!--<div class="schedule-listing">
+                            <div class="schedule-slot-time" style="color:white !important">
+                                <span> 05.30 - 06.30 PM</span>
+                            </div>
+                            <div class="schedule-slot-info">
+
+                                <div class="schedule-slot-info-content">
+                                    <h3 class="schedule-slot-title">
+                                        Lunch Break
+                                        <strong>@ Agaton Johnsson</strong>
+                                    </h3>
+                                    <a href="#">
+                                        <img src="images/schedule_lunch.png" alt="">
+                                    </a>
+                                </div>-->
+                                <!--Info content end -->
+                                <!--</div>--><!-- Slot info end -->
+                                <!--</div>-->
+                                <!--schedule-listing end -->
+                                <!--<div class="schedule-listing">
+                            <div class="schedule-slot-time">
+                                <span> 06.30 - 07.30 PM</span>
+                                Workshop
+                            </div>
+                            <div class="schedule-slot-info">
+                                <a href="#">
+                                    <img class="schedule-slot-speakers" src="images/speakers/speaker8.jpg" alt="">
+                                </a>
+                                <div class="schedule-slot-info-content">
+                                    <h3 class="schedule-slot-title">
+                                        Human Centered Design
+                                        <strong>@ Henrikon Rebecca</strong>
+                                    </h3>
+                                    <p>
+                                        How you transform your business as
+                                        technology, consumer, habits industry dynamics change? Find out from
+                                        those leading the charge. How you transform
+                                    </p>
+                                </div>-->
+                                <!--Info content end -->
+                                <!--</div>--><!-- Slot info end -->
+                                <!--</div>-->
+                                <!--schedule-listing end -->  <!--schedule-listing end -->
+                                <!--<div class="schedule-listing">
+                            <div class="schedule-slot-time" style="color:white !important">
+                                <span> 03.30 - 04.30 PM</span>
+                                Workshop
+                            </div>
+                            <div class="schedule-slot-info">
+                                <a href="#">
+                                    <img class="schedule-slot-speakers" src="images/speakers/speaker6.jpg" alt="">
+                                </a>
+                                <div class="schedule-slot-info-content">
+                                    <h3 class="schedule-slot-title">
+                                        Reinventing Experiences
+                                        <strong>@ Fredric Martinsson</strong>
+                                    </h3>
+                                    <p>
+                                        How you transform your business as
+                                        technology, consumer, habits industry dynamics change? Find out from
+                                        those leading the charge. How you transform
+                                    </p>
+                                </div>-->
+                                <!--Info content end -->
+                                <!--</div>--><!-- Slot info end -->
+                                <!--</div>-->
+                                <!--schedule-listing end -->
+                                <!--<div class="schedule-listing">
+                            <div class="schedule-slot-time">
+                                <span> 04.30 - 05.30 PM</span>
+                                Workshop
+                            </div>
+                            <div class="schedule-slot-info">
+                                <a href="#">
+                                    <img class="schedule-slot-speakers" src="images/speakers/speaker7.jpg" alt="">
+                                </a>
+                                <div class="schedule-slot-info-content">
+                                    <h3 class="schedule-slot-title">
+                                        Cultures of Creativity
+                                        <strong>@ Hall  Building</strong>
+                                    </h3>
+                                    <p>
+                                        How you transform your business as
+                                        technology, consumer, habits industry dynamics change? Find out from
+                                        those leading the charge. How you transform
+                                    </p>
+                                </div>-->
+                                <!--Info content end -->
+                                <!--</div>--><!-- Slot info end -->
+                                <!--</div>-->
+                                <!--schedule-listing end -->
+                                <!--<div class="schedule-listing">
+                            <div class="schedule-slot-time" style="color:white !important">
+                                <span> 05.30 - 06.30 PM</span>
+                            </div>
+                            <div class="schedule-slot-info">
+
+                                <div class="schedule-slot-info-content">
+                                    <h3 class="schedule-slot-title">
+                                        Lunch Break
+                                        <strong>@ Agaton Johnsson</strong>
+                                    </h3>
+                                    <a href="#">
+                                        <img src="images/schedule_lunch.png" alt="">
+                                    </a>
+                                </div>-->
+                                <!--Info content end -->
+                                <!--</div>--><!-- Slot info end -->
+                                <!--</div>-->
+                                <!--schedule-listing end -->
+                                <!--<div class="schedule-listing">
+                            <div class="schedule-slot-time">
+                                <span> 06.30 - 07.30 PM</span>
+                                Workshop
+                            </div>
+                            <div class="schedule-slot-info">
+                                <a href="#">
+                                    <img class="schedule-slot-speakers" src="images/speakers/speaker8.jpg" alt="">
+                                </a>
+                                <div class="schedule-slot-info-content">
+                                    <h3 class="schedule-slot-title">
+                                        Human Centered Design
+                                        <strong>@ Henrikon Rebecca</strong>
+                                    </h3>
+                                    <p>
+                                        How you transform your business as
+                                        technology, consumer, habits industry dynamics change? Find out from
+                                        those leading the charge. How you transform
+                                    </p>
+                                </div>-->
+                                <!--Info content end -->
+                                <!--</div>--><!-- Slot info end -->
+                                <!--</div>-->
+                                <!--schedule-listing end -->
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div><!-- container end-->
+        </section>
+        <!--cfp -->
+
+
+
+        <section class="ts-intro-sponsors" style="background-image: url(images/BG_11.webp)">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2 class="section-title white">
+                            Call for Presentations
+                        </h2>
+                        <p class="banner-desc" style="color:white;text-align:center">
+                            Got a breakthrough idea or story? We are looking for speakers ready to ignite the stage.
+                            <br />   Share your experience and inspire hundreds of DevOps aficionados.
+                        </p> <!-- section title end-->
+                    </div><!-- col end-->
+                </div><!-- row end-->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="sponsors-logo text-center">
+                            <div class="sponsor-btn text-center">
+                                <a href="https://speaker.makemypass.com/dmcon-proposal" target="_blank" class="btn" style="background-color: #f3f3f3 !important; color: #000d4b!important">Submit Your Talk</a>
+                            </div>
+                        </div><!-- sponsors logo end-->
+                    </div><!-- col end-->
+                </div><!-- row end-->
+            </div><!-- container end-->
+        </section>
+
+        <section class="ts-blog section-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2 class="section-title">
+                            <span>Info Update</span>
+                            Video Clips From DMCON 2024
+                        </h2>
+                    </div><!-- col end-->
+                </div><!-- row end-->
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="post">
+                            <div class="video-preview">
+                                <a href="https://www.youtube.com/watch?v=kfmPLtvWRfw" target="_blank">
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/kfmPLtvWRfw?si=6Yr5q3-wLrP55Gfb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+                                </a>
+                            </div>
+
+                            <!-- post-body end -->
+                        </div><!-- post end-->
+                    </div><!-- col end-->
+                    <div class="col-lg-6">
+                        <div class="post">
+                            <div class="video-preview">
+                                <a href="https://youtu.be/0dFPH46-Qns?list=PLaZCRG_WvL4tqoNi_6PaG0oQdTYpxT0cq" target="_blank">
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/0dFPH46-Qns?list=PLaZCRG_WvL4tqoNi_6PaG0oQdTYpxT0cq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+                                </a>
+                            </div>
+
+                            <!-- post-body end -->
+                        </div><!-- post end-->
+                    </div><!-- col end-->
+                    <!-- col end-->
+                </div><!-- row end-->
+            </div><!-- container end-->
+            <!-- shap image-->
+            <div class="speaker-shap">
+                <img class="shap2" src="images/shap/news_memphis2.png" alt="">
+            </div>
+        </section>
+
+        <!-- ts experience end-->
+        <!-- ts pricing start-->
+        <section class="ts-pricing" style="background-image: url(images/bg_new.webp)">
+            <div class="container">
+
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2 class="section-title white">
+                            <span>Pricing Plans</span>
+                            Get your Ticket
+                        </h2>
+                    </div><!-- section title end-->
+                </div><!-- col end-->
+                <!-- row end-->
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="pricing-item disebled">
+                            <img class="pricing-dot " src="images/pricing/dot.png" alt="">
+                            <div class="ts-pricing-box">
+
+                                <div class="ts-pricing-header">
+                                    <h3 class="ts-pricing-name">Super Early Bird</h3>
+                                    <h3 class="ts-pricing-price">
+                                        <span class="currency">INR</span>699
+                                    </h3>
+                                </div>
+                                <div class="ts-pricing-progress">
+                                    <p class="amount-progres-text">Available tickets for this price</p>
+                                    <div class="ts-progress">
+                                        <div class="ts-progress-inner" style="width: 100%"></div>
+                                    </div>
+                                    <p class="ts-pricing-value">50/50</p>
+                                </div>
+                                <div class="promotional-code">
+
+                                    <a href="#" class="btn pricing-btn">Sold Out</a>
+
+                                </div>
+                            </div><!-- ts pricing box-->
+                            <img class="pricing-dot1 " src="images/pricing/dot.png" alt="">
+                        </div>
+                    </div><!-- col end-->
+                    <div class="col-lg-3">
+                        <div class="pricing-item disebled">
+                            <img class="pricing-dot " src="images/pricing/dot.png" alt="">
+                            <div class="ts-pricing-box">
+                                <span class="big-dot"></span>
+                                <div class="ts-pricing-header">
+                                    <h3 class="ts-pricing-name">Early Bird</h3>
+                                    <h3 class="ts-pricing-price">
+                                        <span class="currency">INR</span>999
+                                    </h3>
+                                </div>
+                                <div class="ts-pricing-progress">
+                                    <p class="amount-progres-text">Available tickets for this price</p>
+                                    <div class="ts-progress">
+                                        <div class="ts-progress-inner" style="width: 100%"></div>
+                                    </div>
+                                    <p class="ts-pricing-value">100/100</p>
+                                </div>
+                                <div class="promotional-code">
+
+                                    <a href="#" class="btn pricing-btn">Sold Out</a>
+
+                                </div>
+                            </div><!-- ts pricing box-->
+                            <img class="pricing-dot1 " src="images/pricing/dot.png" alt="">
+                        </div>
+                    </div><!-- col end-->
+                    <div class="col-lg-3">
+                        <div class="pricing-item">
+                            <img class="pricing-dot " src="images/pricing/dot.png" alt="">
+                            <div class="ts-pricing-box">
+                                <span class="big-dot"></span>
+                                <div class="ts-pricing-header">
+                                    <h3 class="ts-pricing-name">Standard</h3>
+                                    <h3 class="ts-pricing-price">
+                                        <span class="currency">INR</span>1299
+                                    </h3>
+                                </div>
+                                <div class="ts-pricing-progress">
+                                    <p class="amount-progres-text">Available tickets for this price</p>
+                                    <div class="ts-progress">
+                                        <div class="ts-progress-inner" style="width: 50%"></div>
+                                    </div>
+                                    <p class="ts-pricing-value">145/150</p>
+                                </div>
+                                <div class="promotional-code">
+
+                                    <a href="https://makemypass.com/event/dmcon2025" target="_blank" class="btn pricing-btn">Buy Ticket</a>
+
+                                </div>
+                            </div><!-- ts pricing box-->
+                            <img class="pricing-dot1 " src="images/pricing/dot.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="pricing-item disebled">
+                            <img class="pricing-dot " src="images/pricing/dot.png" alt="">
+                            <div class="ts-pricing-box">
+                                <span class="big-dot"></span>
+                                <div class="ts-pricing-header">
+                                    <h3 class="ts-pricing-name">Late Bird</h3>
+                                    <h3 class="ts-pricing-price">
+                                        <span class="currency">INR</span>1699
+                                    </h3>
+                                </div>
+                                <div class="ts-pricing-progress">
+                                    <p class="amount-progres-text">Available tickets for this price</p>
+                                    <div class="ts-progress">
+                                        <div class="ts-progress-inner" style="width: 0%"></div>
+                                    </div>
+                                    <p class="ts-pricing-value">0/150</p>
+                                </div>
+                                <div class="promotional-code">
+
+                                    <a href="#" class="btn pricing-btn">Coming Soon</a>
+
+                                </div>
+                            </div><!-- ts pricing box-->
+                            <img class="pricing-dot1 " src="images/pricing/dot.png" alt="">
+                        </div>
+                    </div>
+                    <!-- col end-->
+                </div>
+            </div><!-- container end-->
+            <div class="speaker-shap">
+                <img class="shap2" src="images/shap/pricing_memphis1.png" alt="">
+            </div>
+        </section>
+        <!--image -->
+        <section class="ts-intro-outcome" style="background-image: url(images/bg/outcomes_bg.jpg)">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <h2 class="section-title text-center">
+                            <span>Why Join us</span>
+                            Event Outcomes
+                        </h2>
+                    </div>
+                </div>
+
+
+                <div class="grid ts-grid-item">
+                    <div class="grid-item">
+                        <a href="images/A98_0935.JPG" class="ts-popup"><img src="images/A98_0935.JPG" alt="" /></a>
+                    </div>
+                    <div class="grid-item">
+                        <a href="images/A98_0903.JPG" class="ts-popup"><img src="images/A98_0903.JPG" alt="" /></a>
+                    </div>
+                    <div class="grid-item">
+                        <a href="images/A98_1100.JPG" class="ts-popup"><img src="images/A98_1100.JPG" alt="" /></a>
+                    </div>
+                    <div class="grid-item">
+                        <a href="images/A98_0923.JPG" class="ts-popup"><img src="images/A98_0923.JPG" alt="" /></a>
+                    </div>
+                    <div class="grid-item">
+                        <a href="images/A98_1626.JPG" class="ts-popup"><img src="images/A98_1626.JPG" alt="" /></a>
                     </div>
                 </div>
             </div>
-            <div class="foo_btm">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-12">
-                            <div class="copyright-text">
-                                <span>
-                                    &copy; copyright by <a href="https://devopsmalayalam.io/"><b>Devops Malayalam</b></a>
-                                    2024
-                                </span>
-                            </div>
+        </section>
+        <script>
+            // JavaScript to handle the auto-scrolling behavior
+            document.addEventListener('DOMContentLoaded', function () {
+                const carousel = document.querySelector('.about-carousel');
+                const totalImages = carousel.children.length;
+
+                // Adjust the animation duration based on the number of images
+                const duration = (totalImages + 2) * 5; // Time in seconds for each full cycle
+
+                carousel.style.animationDuration = `${duration}s`;
+            });
+        </script>
+        <!-- ts intro end-->
+        <!-- ts funfact start-->
+
+        <section class="ts-funfact" style="background-image: url(images/BD_22.webp)">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="ts-single-funfact">
+                            <h3 class="funfact-num"><span class="counterUp" data-counter="20">20</span>+</h3>
+                            <h4 class="funfact-title">
+                                Our Visionary
+                                Speakers
+                            </h4>
                         </div>
-                    </div>
+                    </div><!-- col end-->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="ts-single-funfact">
+                            <h3 class="funfact-num"><span class="counterUp" data-counter="62">62</span></h3>
+                            <h4 class="funfact-title">International Sponsors</h4>
+                        </div>
+                    </div><!-- col end-->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="ts-single-funfact">
+                            <h3 class="funfact-num"><span class="counterUp" data-counter="55">55</span>+</h3>
+                            <h4 class="funfact-title">
+                                Workshops
+                                We offer
+                            </h4>
+                        </div>
+                    </div><!-- col end-->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="ts-single-funfact">
+                            <h3 class="funfact-num"><span class="counterUp" data-counter="400">400</span>+</h3>
+                            <h4 class="funfact-title">
+                                Event
+                                Participants
+                            </h4>
+                        </div>
+                    </div><!-- col end-->
+                </div><!-- row end-->
+            </div><!-- container end-->
+        </section>
+
+        <!--<section id="ts-sponsors" class="ts-sponsors">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-lg-12 mx-auto">
+                <h2 class="section-title text-center">
+                    <span>Who Healps us</span>
+                    Our Sponsors
+                </h2>
+            </div>
+        </div>-->
+        <!--/ Title row end -->
+        <!--<div class="sponsors-wrap">
+    <h3 class="sponsor-title text-center">Platinum Sponsors</h3>
+    <div class="row sponsor-padding text-center">
+        <div class="col-lg-3">
+            <a href="#" class="sponsors-logo">
+                <img class="img-fluid" src="images/sponsors/sponsor-1.png" alt="">
+            </a>
+        </div>-->
+        <!-- Col 1 end -->
+        <!--<div class="col-lg-3">
+        <a href="#" class="sponsors-logo">
+            <img class="img-fluid" src="images/sponsors/sponsor-2.png" alt="">
+        </a>
+    </div>-->
+        <!-- Col 2 end -->
+        <!--<div class="col-lg-3">
+        <a href="#" class="sponsors-logo">
+            <img class="img-fluid" src="images/sponsors/sponsor-3.png" alt="">
+        </a>
+    </div>-->
+        <!-- Col 3 end -->
+        <!--<div class="col-lg-3">
+        <a href="#" class="sponsors-logo">
+            <img class="img-fluid" src="images/sponsors/sponsor-4.png" alt="">
+        </a>
+    </div>-->
+        <!-- Col 3 end -->
+        <!--</div>
+    </div>-->
+        <!--/ Content row 1 end -->
+        <!--<div class="sponsors-wrap">
+    <h3 class="sponsor-title text-center">Gold Sponsors</h3>
+    <div class="row sponsor-padding text-center">
+        <div class="col-lg-3">
+            <a href="#" class="sponsors-logo">
+                <img class="img-fluid" src="images/sponsors/sponsor-5.png" alt="">
+            </a>
+        </div>-->
+        <!-- Col 1 end -->
+        <!--<div class="col-lg-3">
+        <a href="#" class="sponsors-logo">
+            <img class="img-fluid" src="images/sponsors/sponsor-6.png" alt="">
+        </a>
+    </div>-->
+        <!-- Col 2 end -->
+        <!--<div class="col-lg-3">
+        <a href="#" class="sponsors-logo">
+            <img class="img-fluid" src="images/sponsors/sponsor-7.png" alt="">
+        </a>
+    </div>-->
+        <!-- Col 3 end -->
+        <!--<div class="col-lg-3">
+        <a href="#" class="sponsors-logo">
+            <img class="img-fluid" src="images/sponsors/sponsor-8.png" alt="">
+        </a>
+    </div>-->
+        <!-- Col 3 end -->
+        <!--</div>
+    </div>-->
+        <!--/ Content row 2 end -->
+        <!--<div class="row">
+        <div class="col-lg-12 mx-auto">
+            <div class="general-btn text-center">
+                <a class="btn" href="#">Become A Sponsor</a>
+            </div>
+        </div>
+    </div>-->
+        <!--/ Content row 3 end -->
+        <!--</div>-->
+        <!--/ Container end -->
+        <!--</section>-->
+        <!-- ts funfact end-->
+        <!-- ts speaker start-->
+        <!--<section id="ts-speakers" class="ts-speakers speaker-classic" style="background-image:url(images/speakers/speaker_bg.png)">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="section-title text-center">
+                    <span>Listen to the</span>
+                    Event Speakers
+                </h2>
+            </div>-->
+        <!-- col end-->
+        <!--</div>--><!-- row end-->
+        <!--<div class="row">
+    <div class="col-lg-3 col-md-6">
+        <div class="ts-speaker">
+            <div class="speaker-img">
+                <img class="img-fluid" src="images/speakers/speaker1.jpg" alt="">
+                <a href="#popup_1" class="view-speaker ts-image-popup" data-effect="mfp-zoom-in">
+                    <i class="icon icon-plus"></i>
+                </a>
+            </div>
+            <div class="ts-speaker-info">
+                <h3 class="ts-title"><a href="#">Fredric Martinsson</a></h3>
+                <p>
+                    Founder, Edilta
+                </p>
+            </div>
+        </div>-->
+        <!-- popup start-->
+        <!--<div id="popup_1" class="container ts-speaker-popup mfp-hide">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="ts-speaker-popup-img">
+                <img src="images/speakers/speaker1.jpg" alt="">
+            </div>
+        </div>-->
+        <!-- col end-->
+        <!--<div class="col-lg-6">
+    <div class="ts-speaker-popup-content">
+        <h3 class="ts-title">David Robert</h3>
+        <span class="speakder-designation">Cheif Architecture</span>
+        <img class="company-logo" src="images/sponsors/sponsor-6.png" alt="">
+        <p>
+            World is committed to making participation in the event a harass ment free experience
+            for everyone, regardless of level experience gender, gender identity and expression
+        </p>
+        <h4 class="session-name">
+            Sessions by David
+        </h4>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="speaker-session-info">
+                    <h4>Day 1</h4>
+                    <span>
+                        10.30 - 11.30 am
+                    </span>
+                    <p>
+                        Marketing Matters
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="speaker-session-info">
+                    <h4>Day 1</h4>
+                    <span>
+                        10.30 - 11.30 am
+                    </span>
+                    <p>
+                        Marketing Matters
+                    </p>
                 </div>
             </div>
         </div>
-    </footer>
+        <div class="ts-speakers-social">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+            <a href="#"><i class="fa fa-google-plus"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+        </div>
+    </div>-->
+        <!-- ts-speaker-popup-content end-->
+        <!--</div>--><!-- col end-->
+        <!--</div>--><!-- row end-->
+        <!--</div>--><!-- popup end-->
+        <!--</div>--> <!-- col end-->
+        <!--<div class="col-lg-3 col-md-6">
+    <div class="ts-speaker">
+        <div class="speaker-img">
+            <img class="img-fluid" src="images/speakers/speaker2.jpg" alt="">
+            <a href="#popup_2" class="view-speaker ts-image-popup" data-effect="mfp-zoom-in">
+                <i class="icon icon-plus"></i>
+            </a>
+        </div>
+        <div class="ts-speaker-info">
+            <h3 class="ts-title"><a href="#">Melisa Lundryn</a></h3>
+            <p>
+                Lead Designer, Payol
+            </p>
+        </div>
+    </div>-->
+        <!-- popup start-->
+        <!--<div id="popup_2" class="container ts-speaker-popup mfp-hide">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="ts-speaker-popup-img">
+                <img src="images/speakers/speaker2.jpg" alt="">
+            </div>
+        </div>-->
+        <!-- col end-->
+        <!--<div class="col-lg-6">
+    <div class="ts-speaker-popup-content">
+        <h3 class="ts-title">David Robert</h3>
+        <span class="speakder-designation">Cheif Architecture</span>
+        <img class="company-logo" src="images/sponsors/sponsor-6.png" alt="">
+        <p>
+            World is committed to making participation in the event a harass ment free experience
+            for everyone, regardless of level experience gender, gender identity and expression
+        </p>
+        <h4 class="session-name">
+            Sessions by David
+        </h4>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="speaker-session-info">
+                    <h4>Day 1</h4>
+                    <span>
+                        10.30 - 11.30 am
+                    </span>
+                    <p>
+                        Marketing Matters
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="speaker-session-info">
+                    <h4>Day 1</h4>
+                    <span>
+                        10.30 - 11.30 am
+                    </span>
+                    <p>
+                        Marketing Matters
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="ts-speakers-social">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+            <a href="#"><i class="fa fa-google-plus"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+        </div>
+    </div>-->
+        <!-- ts-speaker-popup-content end-->
+        <!--</div>--><!-- col end-->
+        <!--</div>--><!-- row end-->
+        <!--</div>--><!-- popup end-->
+        <!--</div>--> <!-- col end-->
+        <!--<div class="col-lg-3 col-md-6">
+    <div class="ts-speaker">
+        <div class="speaker-img">
+            <img class="img-fluid" src="images/speakers/speaker3.jpg" alt="">
+            <a href="#popup_3" class="view-speaker ts-image-popup" data-effect="mfp-zoom-in">
+                <i class="icon icon-plus"></i>
+            </a>
+        </div>
+        <div class="ts-speaker-info">
+            <h3 class="ts-title"><a href="#">Agaton Johnsson</a></h3>
+            <p>
+                Developer Expert
+            </p>
+        </div>
+    </div>-->
+        <!-- popup start-->
+        <!--<div id="popup_3" class="container ts-speaker-popup mfp-hide">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="ts-speaker-popup-img">
+                <img src="images/speakers/speaker3.jpg" alt="">
+            </div>
+        </div>-->
+        <!-- col end-->
+        <!--<div class="col-lg-6">
+    <div class="ts-speaker-popup-content">
+        <h3 class="ts-title">David Robert</h3>
+        <span class="speakder-designation">Cheif Architecture</span>
+        <img class="company-logo" src="images/sponsors/sponsor-6.png" alt="">
+        <p>
+            World is committed to making participation in the event a harass ment free experience
+            for everyone, regardless of level experience gender, gender identity and expression
+        </p>
+        <h4 class="session-name">
+            Sessions by David
+        </h4>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="speaker-session-info">
+                    <h4>Day 1</h4>
+                    <span>
+                        10.30 - 11.30 am
+                    </span>
+                    <p>
+                        Marketing Matters
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="speaker-session-info">
+                    <h4>Day 1</h4>
+                    <span>
+                        10.30 - 11.30 am
+                    </span>
+                    <p>
+                        Marketing Matters
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="ts-speakers-social">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+            <a href="#"><i class="fa fa-google-plus"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+        </div>
+    </div>-->
+        <!-- ts-speaker-popup-content end-->
+        <!--</div>--><!-- col end-->
+        <!--</div>--><!-- row end-->
+        <!--</div>--><!-- popup end-->
+        <!--</div>--> <!-- col end-->
+        <!--<div class="col-lg-3 col-md-6">
+    <div class="ts-speaker">
+        <div class="speaker-img">
+            <img class="img-fluid" src="images/speakers/speaker4.jpg" alt="">
+            <a href="#popup_4" class="view-speaker ts-image-popup" data-effect="mfp-zoom-in">
+                <i class="icon icon-plus"></i>
+            </a>
+        </div>
+        <div class="ts-speaker-info">
+            <h3 class="ts-title"><a href="#">Rebecca Henrikon</a></h3>
+            <p>
+                Founder, Cards
+            </p>
+        </div>
+    </div>-->
+        <!-- popup start-->
+        <!--<div id="popup_4" class="container ts-speaker-popup mfp-hide">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="ts-speaker-popup-img">
+                <img src="images/speakers/speaker4.jpg" alt="">
+            </div>
+        </div>-->
+        <!-- col end-->
+        <!--<div class="col-lg-6">
+    <div class="ts-speaker-popup-content">
+        <h3 class="ts-title">David Robert</h3>
+        <span class="speakder-designation">Cheif Architecture</span>
+        <img class="company-logo" src="images/sponsors/sponsor-6.png" alt="">
+        <p>
+            World is committed to making participation in the event a harass ment free experience
+            for everyone, regardless of level experience gender, gender identity and expression
+        </p>
+        <h4 class="session-name">
+            Sessions by David
+        </h4>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="speaker-session-info">
+                    <h4>Day 1</h4>
+                    <span>
+                        10.30 - 11.30 am
+                    </span>
+                    <p>
+                        Marketing Matters
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="speaker-session-info">
+                    <h4>Day 1</h4>
+                    <span>
+                        10.30 - 11.30 am
+                    </span>
+                    <p>
+                        Marketing Matters
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="ts-speakers-social">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+            <a href="#"><i class="fa fa-google-plus"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+        </div>
+    </div>-->
+        <!-- ts-speaker-popup-content end-->
+        <!--</div>--><!-- col end-->
+        <!--</div>--><!-- row end-->
+        <!--</div>--><!-- popup end-->
+        <!--</div>--> <!-- col end-->
+        <!--<div class="col-lg-3 col-md-6">
+    <div class="ts-speaker">
+        <div class="speaker-img">
+            <img class="img-fluid" src="images/speakers/speaker5.jpg" alt="">
+            <a href="#popup_5" class="view-speaker  ts-image-popup" data-effect="mfp-zoom-in">
+                <i class="icon icon-plus"></i>
+            </a>
+        </div>
+        <div class="ts-speaker-info">
+            <h3 class="ts-title"><a href="#">Fredric Martinsson</a></h3>
+            <p>
+                Founder, Edilta
+            </p>
+        </div>
+    </div>-->
+        <!-- popup start-->
+        <!--<div id="popup_5" class="container ts-speaker-popup mfp-hide">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="ts-speaker-popup-img">
+                <img src="images/speakers/speaker5.jpg" alt="">
+            </div>
+        </div>-->
+        <!-- col end-->
+        <!--<div class="col-lg-6">
+    <div class="ts-speaker-popup-content">
+        <h3 class="ts-title">David Robert</h3>
+        <span class="speakder-designation">Cheif Architecture</span>
+        <img class="company-logo" src="images/sponsors/sponsor-6.png" alt="">
+        <p>
+            World is committed to making participation in the event a harass ment free experience
+            for everyone, regardless of level experience gender, gender identity and expression
+        </p>
+        <h4 class="session-name">
+            Sessions by David
+        </h4>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="speaker-session-info">
+                    <h4>Day 1</h4>
+                    <span>
+                        10.30 - 11.30 am
+                    </span>
+                    <p>
+                        Marketing Matters
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="speaker-session-info">
+                    <h4>Day 1</h4>
+                    <span>
+                        10.30 - 11.30 am
+                    </span>
+                    <p>
+                        Marketing Matters
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="ts-speakers-social">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+            <a href="#"><i class="fa fa-google-plus"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+        </div>
+    </div>-->
+        <!-- ts-speaker-popup-content end-->
+        <!--</div>--><!-- col end-->
+        <!--</div>--><!-- row end-->
+        <!--</div>--><!-- popup end-->
+        <!--</div>--> <!-- col end-->
+        <!--<div class="col-lg-3 col-md-6">
+    <div class="ts-speaker">
+        <div class="speaker-img">
+            <img class="img-fluid" src="images/speakers/speaker6.jpg" alt="">
+            <a href="#popup_6" class="view-speaker ts-image-popup" data-effect="mfp-zoom-in">
+                <i class="icon icon-plus"></i>
+            </a>
+        </div>
+        <div class="ts-speaker-info">
+            <h3 class="ts-title"><a href="#">Lundryn Melisa </a></h3>
+            <p>
+                Lead Designer, Payol
+            </p>
+        </div>
+    </div>-->
+        <!-- popup start-->
+        <!--<div id="popup_6" class="container ts-speaker-popup mfp-hide">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="ts-speaker-popup-img">
+                <img src="images/speakers/speaker1.jpg" alt="">
+            </div>
+        </div>-->
+        <!-- col end-->
+        <!--<div class="col-lg-6">
+    <div class="ts-speaker-popup-content">
+        <h3 class="ts-title">David Robert</h3>
+        <span class="speakder-designation">Cheif Architecture</span>
+        <img class="company-logo" src="images/sponsors/sponsor-6.png" alt="">
+        <p>
+            World is committed to making participation in the event a harass ment free experience
+            for everyone, regardless of level experience gender, gender identity and expression
+        </p>
+        <h4 class="session-name">
+            Sessions by David
+        </h4>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="speaker-session-info">
+                    <h4>Day 1</h4>
+                    <span>
+                        10.30 - 11.30 am
+                    </span>
+                    <p>
+                        Marketing Matters
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="speaker-session-info">
+                    <h4>Day 1</h4>
+                    <span>
+                        10.30 - 11.30 am
+                    </span>
+                    <p>
+                        Marketing Matters
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="ts-speakers-social">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+            <a href="#"><i class="fa fa-google-plus"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+        </div>
+    </div>-->
+        <!-- ts-speaker-popup-content end-->
+        <!--</div>--><!-- col end-->
+        <!--</div>--><!-- row end-->
+        <!--</div>--><!-- popup end-->
+        <!--</div>--> <!-- col end-->
+        <!--<div class="col-lg-3 col-md-6">
+    <div class="ts-speaker">
+        <div class="speaker-img">
+            <img class="img-fluid" src="images/speakers/speaker7.jpg" alt="">
+            <a href="#popup_7" class="view-speaker ts-image-popup" data-effect="mfp-zoom-in">
+                <i class="icon icon-plus"></i>
+            </a>
+        </div>
+        <div class="ts-speaker-info">
+            <h3 class="ts-title"><a href="#">Johnsson Agaton </a></h3>
+            <p>
+                Developer Expert
+            </p>
+        </div>
+    </div>-->
+        <!-- popup start-->
+        <!--<div id="popup_7" class="container ts-speaker-popup mfp-hide">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="ts-speaker-popup-img">
+                <img src="images/speakers/speaker7.jpg" alt="">
+            </div>
+        </div>-->
+        <!-- col end-->
+        <!--<div class="col-lg-6">
+    <div class="ts-speaker-popup-content">
+        <h3 class="ts-title">David Robert</h3>
+        <span class="speakder-designation">Cheif Architecture</span>
+        <img class="company-logo" src="images/sponsors/sponsor-6.png" alt="">
+        <p>
+            World is committed to making participation in the event a harass ment free experience
+            for everyone, regardless of level experience gender, gender identity and expression
+        </p>
+        <h4 class="session-name">
+            Sessions by David
+        </h4>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="speaker-session-info">
+                    <h4>Day 1</h4>
+                    <span>
+                        10.30 - 11.30 am
+                    </span>
+                    <p>
+                        Marketing Matters
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="speaker-session-info">
+                    <h4>Day 1</h4>
+                    <span>
+                        10.30 - 11.30 am
+                    </span>
+                    <p>
+                        Marketing Matters
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="ts-speakers-social">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+            <a href="#"><i class="fa fa-google-plus"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+        </div>
+    </div>-->
+        <!-- ts-speaker-popup-content end-->
+        <!--</div>--><!-- col end-->
+        <!--</div>--><!-- row end-->
+        <!--</div>--><!-- popup end-->
+        <!--</div>--> <!-- col end-->
+        <!--<div class="col-lg-3 col-md-6">
+        <div class="ts-speaker">
+            <div class="speaker-img">
+                <img class="img-fluid" src="images/speakers/speaker8.jpg" alt="">
+                <a href="#" class="view-speaker">
+                    <i class="icon icon-plus"></i>
+                </a>
+            </div>
+            <div class="ts-speaker-info">
+                <h3 class="ts-title"><a href="#">Henrikon Rebecca </a></h3>
+                <p>
+                    Founder, Cards
+                </p>
+            </div>
+        </div>
+    </div>-->
+        <!-- col end-->
+        <!--</div>--><!-- row end-->
+        <!--</div>--><!-- container end-->
+        <!-- shap img-->
+        <!--<div class="speaker-shap">
+        <img class="shap1" src="images/shap/home_speaker_memphis1.png" alt="">
+        <img class="shap2" src="images/shap/home_speaker_memphis2.png" alt="">
+        <img class="shap3" src="images/shap/home_speaker_memphis3.png" alt="">
+    </div>-->
+        <!-- shap img end-->
+        <!--</section>-->
+        <!-- ts speaker end-->
+        <section class="ts-map-direction wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="400ms">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5">
+                        <h2 class="column-title">
+                            <span>Reach us</span>
+                            Get Direction to the
+                            Event Hall
+                        </h2>
 
-    <!-- scroll to up -->
-    <div class="scrollup scrollup2"><i class="fas fa-angle-double-up"></i></div>
-    <!-- Javascript Files -->
-    <script src="assets/js/vendor/jquery-2.2.4.min.js"></script>
-    <script src="assets/js/vendor/bootstrap.min.js"></script>
-    <script src="assets/js/vendor/slick.min.js"></script>
-    <script src="assets/js/vendor/counterup.min.js"></script>
-    <script src="assets/js/vendor/jquery.meanmenu.min.js"></script>
-    <script src="assets/js/vendor/jquery.magnific-popup.min.js"></script>
-    <script src="assets/js/vendor/waypoints.min.js"></script>
-    <script src="assets/js/vendor/easing.min.js"></script>
-    <script src="assets/js/vendor/countdown.js"></script>
-    <script src="assets/js/vendor/isotope.pkgd.min.js"></script>
-    <script src="assets/js/vendor/wow.min.js"></script>
-    <script src="assets/js/main.js"></script>
+                        <div class="ts-map-tabs">
+                            <ul class="nav" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="#profile" role="tab" data-toggle="tab">Venue</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#buzz" role="tab" data-toggle="tab">Hotel</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#references" role="tab" data-toggle="tab">How to get there</a>
+                                </li>
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content direction-tabs">
+                                <div role="tabpanel" class="tab-pane active" id="profile">
+                                    <div class="direction-tabs-content">
+                                        <h3>Sree Gokulam Convention Center</h3>
+                                        <p class="derecttion-vanue">
+                                            X7VQ+WX4, Banerji Rd, opp. PVS Memorial,<br /> Kaloor, Kochi, Ernakulam, Kerala 682017
+                                        </p>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="contact-info-box">
+                                                    <h3>Tickets info </h3>
+
+                                                    <p><strong>Email: </strong> <a href="https://demo.themewinter.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="670e09010827021f060a170b024904080a">mod@devopsmalayalam.io</a></p>
+                                                </div>
+
+                                            </div>
+
+                                        </div><!-- row end-->
+                                    </div><!-- direction tabs end-->
+                                </div><!-- tab pane end-->
+                                <div role="tabpanel" class="tab-pane fade" id="buzz">
+                                    <div class="direction-tabs-content">
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="contact-info-box">
+                                                    <h3>Kenz Residency </h3>
+                                                    <p>
+
+                                                        <strong>  Address: </strong> 65/156-A, Opposite Lissie Metro Station, Banerji Road, Kaloor, Ernakulam, Kochi, Kerala 682018
+                                                        <br />
+                                                        <strong>
+                                                            Phone Numbers:
+                                                        </strong> 0484-4050540
+                                                        9048304884
+                                                    </p>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="contact-info-box">
+                                                    <h3>Hotel Classic </h3>
+                                                    <p>
+
+                                                        <strong>  Address: </strong>  41/2553C(C), Xavier Arakkal Road, Opposite Town Railway Station, Ernakulam North, Kacheripady, Kerala 682018
+                                                        <br />
+                                                        <strong>
+                                                            Phone Numbers:
+                                                        </strong>  083040 42459
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div><!-- row end-->
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="contact-info-box">
+                                                    <h3>Hotel PGS Vedanta</h3>
+                                                    <p>
+
+                                                        <strong>  Address: </strong> Lissie Junction, Kaloor, Kochi, Kerala, India - 682018
+                                                        <br />
+                                                        <strong>
+                                                            Phone Numbers:
+                                                        </strong> +91 954 493 9990
+                                                    </p>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="contact-info-box">
+                                                    <h3>Gokulam Park Inn</h3>
+                                                    <p>
+
+                                                        <strong>  Address: </strong> Banerji Road, Opposite Mini Muthoot Tower, Kaloor, Kochi, Ernakulam, Kerala 682017
+                                                        <br />
+                                                        <strong>
+                                                            Phone Numbers:
+                                                        </strong>0484 301 0500
+                                                        9048304884
+                                                    </p>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+
+                                    </div><!-- direction tabs end-->
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="references">
+                                    <div class="direction-tabs-content">
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <h3>Airport</h3>
+                                                <p class="derecttion-vanue">
+                                                    The nearest airport is <strong>Cochin International Airport (COK)</strong>
+                                                    <br />
+                                                    <strong> Distance : 25.9km</strong>
+                                                </p>
+
+                                            </div>
+                                            <div class="col-md-6">
+                                                <h3>Railway Station</h3>
+                                                <p class="derecttion-vanue">
+                                                    The nearest railway station is <strong>Ernakulam Junction (South) Railway Station</strong>
+                                                    <br />
+                                                    <strong> Distance : 3.8km</strong>
+                                                </p>
+
+                                            </div>
+                                        </div><!-- row end-->
+
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <h3>Metro Station</h3>
+                                                <p class="derecttion-vanue">
+                                                    The nearest metro station is <strong>Kaloor Metro Station</strong>
+                                                    <br />
+                                                    <strong> Distance : 650m</strong>
+                                                </p>
+
+                                            </div>
+                                            <div class="col-md-6">
+                                                <h3>Bus Station</h3>
+                                                <p class="derecttion-vanue">
+                                                    The nearest Bus Station is <strong>Kaloor Private Bus Station</strong>
+                                                    <br />
+                                                    <strong> Distance : 700m</strong>
+                                                </p>
+
+                                            </div>
+                                        </div>
+                                    </div><!-- direction tabs end-->
+                                </div>
+                            </div>
+
+                        </div><!-- map tabs end-->
+
+                    </div><!-- col end-->
+                    <div class="col-lg-6 offset-lg-1">
+                        <div class="ts-map">
+                            <div class="mapouter">
+                                <div class="gmap_canvas">
+
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.278400003197!2d76.2878587731573!3d9.993846573144431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080d58d98c3cbf%3A0xe9df5f73bdad094!2sSree%20Gokulam%20Convention%20Center!5e0!3m2!1sen!2sin!4v1751998788345!5m2!1sen!2sin"></iframe>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- col end-->
+            </div><!-- container end-->
+            <div class="speaker-shap">
+                <img class="shap1 wow fadeInLeft" data-wow-duration="1.5s" data-wow-delay="300ms" src="images/shap/Direction_memphis3.png"
+                     alt="">
+                <img class="shap2 wow fadeInRight" data-wow-duration="1.5s" data-wow-delay="400ms" src="images/shap/Direction_memphis2.png"
+                     alt="">
+                <img class="shap3 wow fadeInLeft" data-wow-duration="1.5s" data-wow-delay="500ms" src="images/shap/Direction_memphis4.png"
+                     alt="">
+                <img class="shap4 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="600ms" src="images/shap/Direction_memphis1.png"
+                     alt="">
+            </div>
+        </section>
+
+
+        <!-- ts ts sponsors end-->
+        <!-- ts footer area start-->
+        <div class="footer-area">
+
+            <!-- ts-book-seat start-->
+            <section class="ts-book-seat" style="background-image: url(images/book_seat_img.webp)">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <div class="book-seat-content text-center mb-70">
+                                <h2 class="section-title white">
+                                    <span>Hurry up!</span>
+                                    Book your Seat
+                                </h2>
+                                <a href="https://makemypass.com/event/dmcon2025" target="_blank" class="btn">Buy Ticket</a>
+                            </div><!-- book seat end-->
+                        </div><!-- col end-->
+
+                    </div><!-- row end-->
+
+                </div><!-- container end-->
+            </section>
+            <!-- book seat  end-->
+            <!-- footer start-->
+            <footer class="ts-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <div class="ts-footer-social text-center mb-30">
+                                <ul>
+                                    <li>
+                                        <a href="https://www.facebook.com/DevOpsMalayalam" target="_blank"><i class="fa fa-facebook"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.youtube.com/@DevOpsMalayalam" target="_blank"><i class="fa fa-youtube"></i></a>
+                                    </li>
+
+                                    <li>
+                                        <a href="https://www.linkedin.com/company/devopsmalayalam/posts/?feedView=all" target="_blank"><i class="fa fa-linkedin"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.instagram.com/devopsmalayalam/" target="_blank"><i class="fa fa-instagram"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- footer social end-->
+                            <div class="footer-menu text-center mb-25">
+                                <ul>
+                                    <li><a href="cfp.html">CFP</a></li>
+                                    <li><a href="venue.html">Venue</a></li>
+                                    <li><a href="www.devopsmalayalam.io" target="_blank">Contact</a></li>
+
+                                </ul>
+                            </div><!-- footer menu end-->
+                            <div class="copyright-text text-center">
+                                <p>Copyright © 2025 DMCON. All Rights Reserved.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- footer end-->
+
+            <div class="BackTo">
+                <a href="#" class="fa fa-angle-up" aria-hidden="true"></a>
+            </div>
+        </div>
+        <!-- ts footer area end-->
+        <!-- Javascript Files
+    ================================================== -->
+        <!-- initialize jQuery Library -->
+        <script src="js/jquery.js"></script>
+
+        <script src="js/popper.min.js"></script>
+        <!-- Bootstrap jQuery -->
+        <script src="js/bootstrap.min.js"></script>
+        <!-- Counter -->
+        <script src="js/jquery.appear.min.js"></script>
+        <!-- Countdown -->
+        <script src="js/jquery.jCounter.js"></script>
+        <!-- magnific-popup -->
+        <script src="js/jquery.magnific-popup.min.js"></script>
+        <!-- carousel -->
+        <script src="js/owl.carousel.min.js"></script>
+        <!-- Waypoints -->
+        <script src="js/wow.min.js"></script>
+        <!-- isotop -->
+        <script src="js/isotope.pkgd.min.js"></script>
+
+        <!-- Template custom -->
+        <script src="js/main.js"></script>
+
+    </div>
+   <!-- Body inner end -->
 </body>
 
+
+<!-- Mirrored from demo.themewinter.com/html/exhibz/index-3.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Jul 2025 08:19:06 GMT -->
 </html>
