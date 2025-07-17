@@ -421,17 +421,42 @@
         <!--</section>-->
         <!-- ts intro start -->
         <!--experience -->
+
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
+  <script>
+      $(document).ready(function () {
+          $('.popup-youtube').magnificPopup({
+              type: 'iframe',
+              iframe: {
+                  patterns: {
+                      youtube: {
+                          index: 'youtube.com/',
+                          id: 'embed/',
+                          src: 'https://www.youtube.com/embed/%id%?autoplay=1'
+                      }
+                  },
+                  srcAction: 'iframe_src'
+              }
+          });
+      });
+  </script>
+
         <section id="ts-experiences" class="ts-experiences">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-6 no-padding">
-                        <div class="about-video">
-                            <img class="exp-img" src="images/youtube_video.webp" alt="">
-                            <a href="image/DmCon24.mp4" class="video-btn ts-video-popup"></a>
-                        </div>
+               <div class="col-lg-6 no-padding">
+    <div class="about-video" style="position: relative;">
+        <img class="exp-img" src="images/youtube_video.webp" alt="" style="width:100%; display:block;">
+        <a href="https://www.youtube.com/embed/hNvtDrbfOIw" class="video-btn popup-youtube"
+           style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); font-size:60px; color:white;">
+            <i class="icon icon-play"></i>
+        </a>
+    </div>
+</div>
 
-
-                    </div><!-- col end-->
                     <div class="col-lg-6 no-padding align-self-center wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="500ms">
                         <div class="ts-exp-wrap">
                             <div class="ts-exp-content">
