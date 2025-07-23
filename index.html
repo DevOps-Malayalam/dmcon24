@@ -185,13 +185,31 @@
         </header>
         <!--/ Header end -->
         <!-- banner start-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $(".main-slider").owlCarousel({
+                    items: 1,
+                    loop: true,
+                    autoplay: true,
+                    autoplayTimeout: 5000, // 5 seconds
+                    autoplayHoverPause: true,
+                    animateOut: 'fadeOut',
+                    animateIn: 'fadeIn',
+                    smartSpeed: 1000,
+                    dots: true,
+                    nav: false
+                });
+            });
+        </script>
+
         <section class="main-slider owl-carousel">
             <div class="banner-item overlay" style="background-image:url(images/hero_area/banner3.webp)">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-11">
                             <div class="banner-content-wrap text-center">
-                               <p class="banner-info">13th September 2025 ,Kochi, India</p>
+                                <p class="banner-info">13th September 2025 ,Kochi, India</p>
                                 <h1 class="banner-title">#Kerala's Premier DevOps Conference</h1>
 
                                 <p class="banner-desc">
@@ -265,13 +283,13 @@
                 </div>
                 <!-- Container end -->
             </div>
-       
+
             <div class="banner-item overlay" style="background-image:url(images/hero_area/slider-4.webp)">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-11 mx-auto">
                             <div class="banner-content-wrap text-center">
-                                  <p class="banner-info">13th September 2025 ,Kochi, India</p>
+                                <p class="banner-info">13th September 2025 ,Kochi, India</p>
                                 <h1 class="banner-title">#Kerala's Premier DevOps Conference</h1>
 
                                 <p class="banner-desc">
@@ -292,7 +310,7 @@
                 </div>
                 <!-- Container end -->
             </div>
-        
+
         </section>
         <!-- banner end-->
         <!--count down start-->
@@ -456,8 +474,10 @@
         <!--experience -->
         <!-- Include CSS for Magnific Popup -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://code.
+                .com/jquery-3.6.0.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
 
         <script>
             $(document).ready(function () {
@@ -1086,7 +1106,7 @@
             </div>
         </section>
         <!--image -->
-        <section class="ts-intro-outcome" >
+        <section class="ts-intro-outcome">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 mx-auto">
