@@ -1371,14 +1371,56 @@
                 <!--/ Title row end -->
                 <div class="sponsors-wrap">
                     <h2 class="sponsor-title text-center" style="padding:20px 0px !important">Platinum Sponsors</h2>
-                    <div class="row sponsor-padding text-center">
-                        <div class="col-lg-12" style="padding:30px 0px !important">
-                            <a href="https://www.yugabyte.com/yugabytedb/?utm_term=yugabyte&utm_campaign=Search+-+India&utm_source=google&utm_medium=cpc&utm_content=brand-product-page&hsa_acc=5409638229&hsa_cam=22537997426&hsa_grp=180858554082&hsa_ad=751256968750&hsa_src=g&hsa_tgt=kwd-650558965366&hsa_kw=yugabyte&hsa_mt=p&hsa_net=adwords&hsa_ver=3&gad_source=1&gad_campaignid=22537997426&gbraid=0AAAAAC_hjNPvGDO7ERLEofDDOH1hAA0sG&gclid=Cj0KCQjwwsrFBhD6ARIsAPnUFD0FwVVGsY6n4H8mjF-Omb3Aw_uc_-NsZC3P_qOMH-7EDDH1tLgicgkaAt-WEALw_wcB" target="_blank">
-                                <img src="images/sponsors/sponsor1.png" alt="" />
-                            </a>
-                        </div>
-
+                    <!-- Sponsor Section -->
+                    <div class="sponsor-logos">
+                        <a href="https://www.thoughtbox.io/" target="_blank">
+                            <img class="img-fluid" src="images/sponsors/sponsor9.webp" alt="Thoughtbox" />
+                        </a>
+                        <a href="https://www.yugabyte.com/yugabytedb/?utm_term=yugabyte&utm_campaign=Search+-+India&utm_source=google&utm_medium=cpc&utm_content=brand-product-page&hsa_acc=5409638229&hsa_cam=22537997426&hsa_grp=180858554082&hsa_ad=751256968750&hsa_src=g&hsa_tgt=kwd-650558965366&hsa_kw=yugabyte&hsa_mt=p&hsa_net=adwords&hsa_ver=3&gad_source=1&gad_campaignid=22537997426&gbraid=0AAAAAC_hjNPvGDO7ERLEofDDOH1hAA0sG&gclid=Cj0KCQjwwsrFBhD6ARIsAPnUFD0FwVVGsY6n4H8mjF-Omb3Aw_uc_-NsZC3P_qOMH-7EDDH1tLgicgkaAt-WEALw_wcB" target="_blank">
+                            <img class="img-fluid" src="images/sponsors/sponsor7.webp" alt="Yugabyte" />
+                        </a>
+                        <!-- Add more sponsor logos here -->
                     </div>
+
+                    <style>
+                        /* Flexbox wrapper */
+                        .sponsor-logos {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            flex-wrap: wrap; /* allows wrapping into multiple rows */
+                            gap: 40px; /* space between logos */
+                            padding: 30px 0;
+                        }
+
+                            /* Each logo container */
+                            .sponsor-logos a {
+                                flex: 0 1 auto; /* let logos keep natural width */
+                                text-align: center;
+                            }
+
+                            /* Logo image styling */
+                            .sponsor-logos img {
+                                max-width: 100%;
+                                height: auto;
+                            }
+
+                        /* Mobile view: stack logos */
+                        @media (max-width: 768px) {
+                            .sponsor-logos {
+                                flex-direction: column; /* stack vertically */
+                                gap: 20px; /* smaller gap */
+                            }
+
+                                .sponsor-logos img {
+                                    max-width: 200px; /* prevent oversized logos on mobile */
+                                }
+                        }
+                    </style>
+
+
+
+
                 </div>
 
                 <!--/ Content row 1 end -->
