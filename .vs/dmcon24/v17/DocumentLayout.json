@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\neeth\\source\\repos\\DevOps-Malayalam\\dmcon24\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\neeth\\source\\repos\\DevOps-Malayalam\\dmcon24\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\neeth\\source\\repos\\DevOps-Malayalam\\dmcon24\\venue.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:venue.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\neeth\\source\\repos\\DevOps-Malayalam\\dmcon24\\seewhosattending.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:seewhosattending.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\neeth\\source\\repos\\DevOps-Malayalam\\dmcon24\\schedule.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:schedule.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "venue.html",
+              "DocumentMoniker": "C:\\Users\\neeth\\source\\repos\\DevOps-Malayalam\\dmcon24\\venue.html",
+              "RelativeDocumentMoniker": "venue.html",
+              "ToolTip": "C:\\Users\\neeth\\source\\repos\\DevOps-Malayalam\\dmcon24\\venue.html",
+              "RelativeToolTip": "venue.html",
+              "ViewState": "AgIAAFUBAAAAAAAAAAAQwGEBAABtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-09-24T07:48:04.546Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "seewhosattending.html",
+              "DocumentMoniker": "C:\\Users\\neeth\\source\\repos\\DevOps-Malayalam\\dmcon24\\seewhosattending.html",
+              "RelativeDocumentMoniker": "seewhosattending.html",
+              "ToolTip": "C:\\Users\\neeth\\source\\repos\\DevOps-Malayalam\\dmcon24\\seewhosattending.html",
+              "RelativeToolTip": "seewhosattending.html",
+              "ViewState": "AgIAAOIBAAAAAAAAAAAQwO4BAABtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-09-24T07:47:14.067Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "index.html",
+              "DocumentMoniker": "C:\\Users\\neeth\\source\\repos\\DevOps-Malayalam\\dmcon24\\index.html",
+              "RelativeDocumentMoniker": "index.html",
+              "ToolTip": "C:\\Users\\neeth\\source\\repos\\DevOps-Malayalam\\dmcon24\\index.html",
+              "RelativeToolTip": "index.html",
+              "ViewState": "AgIAAO8GAAAAAAAAAAAQwPsGAAB9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-09-24T07:33:17.569Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "schedule.html",
+              "DocumentMoniker": "C:\\Users\\neeth\\source\\repos\\DevOps-Malayalam\\dmcon24\\schedule.html",
+              "RelativeDocumentMoniker": "schedule.html",
+              "ToolTip": "C:\\Users\\neeth\\source\\repos\\DevOps-Malayalam\\dmcon24\\schedule.html",
+              "RelativeToolTip": "schedule.html",
+              "ViewState": "AgIAANIDAAAAAAAAAAAQwN4DAABtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-09-24T07:33:15.332Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
